@@ -5,4 +5,11 @@
 @charset "utf-8";
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+
+// custom CSS here
+$global-font-family: "Roboto";
+$header-font-family: "Livvic";
+$caption-font-family: "Roboto";
+$link-color: black;
+
 @import "minimal-mistakes"; // main partials

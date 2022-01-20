@@ -12,4 +12,19 @@ $header-font-family: "Livvic";
 $caption-font-family: "Roboto";
 $link-color: black;
 
+a[target="\\_blank"]::after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  margin: 0 3px 0 5px;
+}
+
 @import "minimal-mistakes"; // main partials
+
+.toc {
+  font-family: $global-font-family;
+  .nav__title {
+    font-family: $global-font-family;
+    background: #fe2c54;
+  }
+}
+
+@import "asciinema-player.css";

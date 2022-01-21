@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 
 # Site Settings
 locale                   : "en-US"
-title                    : "My Title"
+title                    : "Xtay Away"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "My Name"
-description              : "My Description"
+name                     : "Xuanken Tay"
+description              : "My personal blog. I write about software development, coding exercises, cool tips and tricks and notes for learning & development purposes."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "yaeba/yaeba.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -102,13 +102,13 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "My Bio"
+  name             : "Xuanken Tay"
+  avatar           : "/assets/images/profile-pic.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Software engineer who likes statistics, machine learning, DevOps and theY cloud"
   location         : "Sydney, AU"
   email            : "xuankentay@gmail.com"
   links:
-    - label: "Email lala"
+    - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       # url: "mailto:your@email.com"
     - label: "Website"

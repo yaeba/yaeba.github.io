@@ -2,6 +2,8 @@
 title: "Asciinema: Terminal Session Recorder"
 excerpt: "Record and share your terminal session"
 toc: true
+tags:
+  - Terminal
 ---
 
 <div id="welcome"></div>

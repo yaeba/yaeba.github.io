@@ -104,7 +104,7 @@ analytics:
 author:
   name             : "Xuanken Tay"
   avatar           : "/assets/images/profile-pic.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Software engineer who likes statistics, machine learning, DevOps and theY cloud"
+  bio              : "Software engineer who likes statistics, machine learning, DevOps and the cloud"
   location         : "Sydney, AU"
   email            : "xuankentay@gmail.com"
   links:

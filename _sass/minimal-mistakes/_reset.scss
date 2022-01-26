@@ -34,12 +34,12 @@ body { margin: 0; }
 
 ::-moz-selection {
   color: #fff;
-  background: $primary-color
+  background: $primary-color !important;
 }
 
 ::selection {
   color: #fff;
-  background: $primary-color;
+  background: $primary-color !important;
 }
 
 /* Display HTML5 elements in IE6-9 and FF3 */

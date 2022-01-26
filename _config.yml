@@ -272,6 +272,11 @@ tag_archive:
 #     category: /categories/:name/
 #     tag: /tags/:name/
 
+# Collections
+collections:
+  exercises:
+    output: true
+    permalink: /:collection/:path/
 
 # HTML Compression
 # - https://jch.penibelst.de/
@@ -295,6 +300,8 @@ defaults:
       share: true
       related: true
       toc_sticky: true
+      categories:
+        - Blog
   # _pages
   - scope:
       path: "_pages"
@@ -302,3 +309,18 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _exercises
+  - scope:
+      path: ""
+      type: exercises
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+      related: true
+      toc: true
+      toc_sticky: true
+      usemathjax: true
+      # categories:
+      #   - Exercise

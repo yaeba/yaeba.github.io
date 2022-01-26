@@ -1,0 +1,29 @@
+---
+title: "FizzBuzz"
+---
+
+Given an integer `n`, return a list of integers from `1` to `n` as strings except for multiples of `3` use `“Fizz”` instead of the integer and for the multiples of `5` use `“Buzz”`. For integers which are multiples of both `3` and `5` use `“FizzBuzz”`.
+
+**Constraints**
+
+- `0 ≤ n ≤ 100,000`
+
+[https://binarysearch.com/problems/FizzBuzz](https://binarysearch.com/problems/FizzBuzz){:target="\_blank"}
+
+## Examples
+
+### Example 1
+
+**Input**
+
+- n = `15`
+
+**Output**
+
+- answer = `['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']`
+
+**Explanation**
+
+## Solution
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=FizzBuzz.cpp"></script>

@@ -1,0 +1,54 @@
+---
+title: "K and -K"
+tags: ["hash table"]
+---
+
+Given a list of integers `nums`, return the largest integer `k` where `k` and `-k` both exist in `nums` (they can be the same integer). If there's no such integer, return `-1`.
+
+**Constraints**
+
+- `n ≤ 100,000` where `n` is the length of `nums`
+
+[https://binarysearch.com/problems/K-and-K](https://binarysearch.com/problems/K-and-K){:target="\_blank"}
+
+## Examples
+
+### Example 1
+
+**Input**
+
+- nums = `[-4, 1, 8, -5, 4, -8]`
+
+**Output**
+
+- answer = `8`
+
+**Explanation**
+
+### Example 2
+
+**Input**
+
+- nums = `[5, 6, 1, -2]`
+
+**Output**
+
+- answer = `-1`
+
+**Explanation**
+
+### Example 3
+
+**Input**
+
+- nums = `[1, 2, 0, 3, 4]`
+
+**Output**
+
+- answer = `0`
+
+**Explanation**
+
+## Solution
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=K-and-K.cpp"></script>

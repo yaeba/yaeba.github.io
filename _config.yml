@@ -223,8 +223,7 @@ sass:
 # Pagination Settings
 pagination:
   enabled: true
-  per_page: 5
-  offset: 2
+  per_page: 6
   permalink: '/page/:num/'
   title: ':title - page :num of :max'
   limit: 0

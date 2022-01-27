@@ -1,6 +1,7 @@
 ---
 title: "First Post"
 excerpt: "The beginning of everything"
+classes: wide
 ---
 
 This is the first post.

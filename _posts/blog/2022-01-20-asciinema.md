@@ -3,7 +3,7 @@ title: "Asciinema: Terminal Session Recorder"
 excerpt: "Record and share your terminal session"
 toc: true
 tags:
-  - Terminal
+  - terminal
 ---
 
 <div id="welcome"></div>

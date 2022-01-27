@@ -230,11 +230,6 @@ pagination:
   sort_field: 'date'
   sort_reverse: true
 
-# # Tagging Settings
-# tag_page_layout: tag
-# tag_page_dir: tags
-# tag_permalink_style: pretty
-
 # Outputting
 permalink: /:categories/:title/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -244,6 +239,8 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 plugins:
   - jekyll-paginate-v2
   - jekyll-archives
+  - jekyll/tagging
+  - jekyll-tagging-related_posts
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
@@ -253,6 +250,8 @@ plugins:
 whitelist:
   - jekyll-paginate-v2
   - jekyll-archives
+  - jekyll/tagging
+  - jekyll-tagging-related_posts
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed

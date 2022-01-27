@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Xtay Away"
+title                    : "Xtaycation"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Xuanken Tay"
@@ -220,16 +220,31 @@ sass:
   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
 
+# Pagination Settings
+pagination:
+  enabled: true
+  per_page: 5
+  offset: 2
+  permalink: '/page/:num/'
+  title: ':title - page :num of :max'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+
+# # Tagging Settings
+# tag_page_layout: tag
+# tag_page_dir: tags
+# tag_permalink_style: pretty
+
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins (previously gems:)
 plugins:
-  - jekyll-paginate
+  - jekyll-paginate-v2
+  - jekyll-archives
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
@@ -237,7 +252,8 @@ plugins:
 
 # mimic GitHub Pages with --safe
 whitelist:
-  - jekyll-paginate
+  - jekyll-paginate-v2
+  - jekyll-archives
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
@@ -255,28 +271,19 @@ whitelist:
 #  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path>/my-awesome-category/index.html ~> path: /
 category_archive:
-  type: liquid
+  type: jekyll-archives
   path: /categories/
 tag_archive:
-  type: liquid
+  type: jekyll-archives
   path: /tags/
 # https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
-
-# Collections
-collections:
-  exercises:
-    output: true
-    permalink: /:collection/:path/
+jekyll-archives:
+  enabled:
+    - tags
+  layouts:
+    tag: archive-taxonomy
+  permalinks:
+    tag: /tags/:name/
 
 # HTML Compression
 # - https://jch.penibelst.de/
@@ -285,12 +292,11 @@ compress_html:
   ignore:
     envs: development
 
-
 # Defaults
 defaults:
-  # _posts
+  # _posts/blog
   - scope:
-      path: ""
+      path: "_posts/blog"
       type: posts
     values:
       layout: single
@@ -300,19 +306,11 @@ defaults:
       share: true
       related: true
       toc_sticky: true
-      categories:
-        - Blog
-  # _pages
+      categories: blog
+  # _posts/exercises
   - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-  # _exercises
-  - scope:
-      path: ""
-      type: exercises
+      path: "_posts/exercises"
+      type: posts
     values:
       layout: single
       author_profile: true
@@ -322,5 +320,19 @@ defaults:
       toc: true
       toc_sticky: true
       usemathjax: true
-      # categories:
-      #   - Exercise
+      categories: exercises
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      class: wide
+      author_profile: true
+  # tags/:name
+  - scope:
+      path: ""
+      type: tag
+    values:
+      class: wide
+      author_profile: true

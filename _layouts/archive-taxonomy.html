@@ -20,10 +20,11 @@ author_profile: false
 
   <div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}
-      <h1 id="page-title" class="page__title">{{ page.title }}</h1>
+      <h1 id="page-title" class="page__title">Posts with {{ page.type }} '{{ page.title }}'</h1>
     {% endunless %}
     {% for post in page.posts %}
       {% include archive-single.html %}
     {% endfor %}
+    <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
   </div>
 </div>

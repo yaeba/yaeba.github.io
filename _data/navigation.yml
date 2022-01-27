@@ -2,7 +2,7 @@
 main:
   - title: "About"
     url: /about/
-  - title: "Tags"
-    url: /tags/
-  - title: "Exercises"
+  - title: "Blog"
+    url: /blog/
+  - title: "Coding Exercises"
     url: /exercises/

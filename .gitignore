@@ -10,6 +10,7 @@
 *.gem
 .bundle
 **/vendor/bundle
+Gemfile.lock
 
 # Node.js and NPM
 node_modules

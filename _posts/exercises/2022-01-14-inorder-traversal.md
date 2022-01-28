@@ -42,8 +42,6 @@ Bonus: Can you do this iteratively?
 
 - answer = `[1, 80, 159]`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Inorder-Traversal.py"></script>

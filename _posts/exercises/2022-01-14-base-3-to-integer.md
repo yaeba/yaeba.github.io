@@ -19,8 +19,6 @@ Given a string `s` representing a number in base 3 (consisting only of 0, 1, or 
 
 - answer = `3`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -30,8 +28,6 @@ Given a string `s` representing a number in base 3 (consisting only of 0, 1, or 
 **Output**
 
 - answer = `7`
-
-**Explanation**
 
 ## Solution
 

@@ -57,8 +57,6 @@ You are given a singly linked list `head` as well as integers `pos` and `val`. I
   });
 </script>
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -100,8 +98,6 @@ You are given a singly linked list `head` as well as integers `pos` and `val`. I
   });
 </script>
 
-**Explanation**
-
 ### Example 3
 
 **Input**
@@ -142,8 +138,6 @@ You are given a singly linked list `head` as well as integers `pos` and `val`. I
     console.error(error);
   });
 </script>
-
-**Explanation**
 
 ## Solution
 

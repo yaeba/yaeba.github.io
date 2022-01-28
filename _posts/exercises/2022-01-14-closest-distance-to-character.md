@@ -24,8 +24,6 @@ Given a string `s` and a character `c`, return a new list of integers of the sam
 
 - answer = `[2, 1, 0, 1, 1, 0]`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Closest-Distance-to-Character.cpp"></script>

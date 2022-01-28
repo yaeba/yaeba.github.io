@@ -25,8 +25,6 @@ You may assume there's no extraneous spaces in the `sentence`. Can you do modify
 
 - answer = `['w', 'o', 'r', 'l', 'd', ' ', 'h', 'i']`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Sentence-Reversal.cpp"></script>

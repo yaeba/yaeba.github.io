@@ -23,8 +23,6 @@ Note: if two rectangles touch only in their perimeters, they don't overlap.
 
 - answer = `True`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -35,8 +33,6 @@ Note: if two rectangles touch only in their perimeters, they don't overlap.
 **Output**
 
 - answer = `False`
-
-**Explanation**
 
 ## Solution
 

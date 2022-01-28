@@ -23,8 +23,6 @@ You are given a list of integers `nums`, representing the number of chess matche
 
 - answer = `[1, 2, 1, 0, 3]`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Leaderboard.py"></script>

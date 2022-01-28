@@ -25,8 +25,6 @@ Given two lists of integers `a` and `b` sorted in ascending order, merge them in
 
 - answer = `[3, 5, 8, 9, 10, 15]`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Merging-Two-Sorted-Lists.cpp"></script>

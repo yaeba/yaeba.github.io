@@ -23,8 +23,6 @@ Given an integer square (n by n) `matrix`, return its transpose. A transpose of 
 
 - answer = `[[1, 4, 7], [2, 5, 8], [3, 6, 9]]`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Transpose-of-a-Matrix.py"></script>

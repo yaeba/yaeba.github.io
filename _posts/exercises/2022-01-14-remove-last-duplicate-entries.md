@@ -33,8 +33,6 @@ Given a list of integers `nums`, find all duplicate numbers and delete their las
 
 - answer = `[1, 3, 4, 5]`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Remove-Last-Duplicate-Entries.py"></script>

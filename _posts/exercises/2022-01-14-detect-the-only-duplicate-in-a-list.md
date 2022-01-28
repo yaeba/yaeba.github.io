@@ -25,8 +25,6 @@ Bonus: Can you do this in $$\mathcal{O}(n)$` time and `$\mathcal{O}(1)$$ space?
 
 - answer = `1`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -36,8 +34,6 @@ Bonus: Can you do this in $$\mathcal{O}(n)$` time and `$\mathcal{O}(1)$$ space?
 **Output**
 
 - answer = `2`
-
-**Explanation**
 
 ## Solution
 

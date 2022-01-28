@@ -52,8 +52,6 @@ Given two trees `root0` and `root1`, return whether you can transform `root0` in
 
 - answer = `True`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Swappable-Trees.cpp"></script>

@@ -23,8 +23,6 @@ Given a string `s`, return whether it is a palindrome.
 
 - answer = `True`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -35,8 +33,6 @@ Given a string `s`, return whether it is a palindrome.
 
 - answer = `True`
 
-**Explanation**
-
 ### Example 3
 
 **Input**
@@ -46,8 +42,6 @@ Given a string `s`, return whether it is a palindrome.
 **Output**
 
 - answer = `False`
-
-**Explanation**
 
 ## Solution
 

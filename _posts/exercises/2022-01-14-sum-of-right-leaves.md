@@ -40,8 +40,6 @@ Given a binary tree `root`, return the sum of all leaves that are right children
 
 - answer = `2`
 
-**Explanation**
-
 ### Example 2
 
 **Input**

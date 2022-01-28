@@ -72,8 +72,6 @@ Bonus: solve it in $$\mathcal{O}(h)$` time and `$\mathcal{O}(1)$$ space where `h
 
 - answer = `2`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Inorder-Successor.cpp"></script>

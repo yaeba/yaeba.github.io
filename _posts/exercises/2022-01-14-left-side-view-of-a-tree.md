@@ -40,8 +40,6 @@ Given a binary tree `root`, return the leftmost node's value on each level of th
 
 - answer = `[0, 5, 1]`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Left-Side-View-of-a-Tree.cpp"></script>

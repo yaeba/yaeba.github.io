@@ -26,8 +26,6 @@ You are given an alphabet (can be lower or uppercase) string `s` and two integer
 
 - answer = `ig`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -39,8 +37,6 @@ You are given an alphabet (can be lower or uppercase) string `s` and two integer
 **Output**
 
 - answer = `hihi`
-
-**Explanation**
 
 ## Solution
 

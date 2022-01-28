@@ -24,8 +24,6 @@ The first few gray codes are: `[0, 1, 11, 10, 110, 111, ...]`
 
 - answer = `2`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Reflected-Binary-Code.cpp"></script>

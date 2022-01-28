@@ -23,8 +23,6 @@ Given a number `n`, return a list of all prime numbers smaller than or equal to 
 
 - answer = `[2, 3]`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -35,8 +33,6 @@ Given a number `n`, return a list of all prime numbers smaller than or equal to 
 
 - answer = `[2, 3, 5, 7, 11, 13, 17, 19]`
 
-**Explanation**
-
 ### Example 3
 
 **Input**
@@ -46,8 +42,6 @@ Given a number `n`, return a list of all prime numbers smaller than or equal to 
 **Output**
 
 - answer = `[2, 3, 5, 7]`
-
-**Explanation**
 
 ## Solution
 

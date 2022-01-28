@@ -23,8 +23,6 @@ Given a list of integers `nums`, find the first missing positive integer. In oth
 
 - answer = `4`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -34,8 +32,6 @@ Given a list of integers `nums`, find the first missing positive integer. In oth
 **Output**
 
 - answer = `2`
-
-**Explanation**
 
 ### Example 3
 
@@ -47,8 +43,6 @@ Given a list of integers `nums`, find the first missing positive integer. In oth
 
 - answer = `3`
 
-**Explanation**
-
 ### Example 4
 
 **Input**
@@ -58,8 +52,6 @@ Given a list of integers `nums`, find the first missing positive integer. In oth
 **Output**
 
 - answer = `1`
-
-**Explanation**
 
 ## Solution
 

@@ -25,8 +25,6 @@ Given a two-dimensional matrix of characters `board` and a string `target`, retu
 
 - answer = `True`
 
-**Explanation**
-
 ### Example 2
 
 **Input**

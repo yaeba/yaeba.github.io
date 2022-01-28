@@ -28,8 +28,6 @@ Bonus: Do this without creating a copy of the list. How many swap or move operat
 
 - answer = `[1, 2, 3, 4, 5, 6]`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -40,8 +38,6 @@ Bonus: Do this without creating a copy of the list. How many swap or move operat
 **Output**
 
 - answer = `[1]`
-
-**Explanation**
 
 ### Example 3
 

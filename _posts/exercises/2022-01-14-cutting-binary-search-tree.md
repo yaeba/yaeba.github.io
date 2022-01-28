@@ -57,8 +57,6 @@ Given a binary search tree `root`, an integer `lo`, and another an integer `hi`,
   });
 </script>
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -99,8 +97,6 @@ Given a binary search tree `root`, an integer `lo`, and another an integer `hi`,
     console.error(error);
   });
 </script>
-
-**Explanation**
 
 ## Solution
 

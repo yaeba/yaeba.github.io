@@ -125,8 +125,6 @@ Given two binary trees `node0` and `node1`, return a merge of the two trees wher
   });
 </script>
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Merging-Binary-Trees.cpp"></script>

@@ -23,8 +23,6 @@ You're given a string `s` consisting solely of `"("` and `")"`. Return whether t
 
 - answer = `True`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -34,8 +32,6 @@ You're given a string `s` consisting solely of `"("` and `")"`. Return whether t
 **Output**
 
 - answer = `True`
-
-**Explanation**
 
 ### Example 3
 
@@ -47,8 +43,6 @@ You're given a string `s` consisting solely of `"("` and `")"`. Return whether t
 
 - answer = `False`
 
-**Explanation**
-
 ### Example 4
 
 **Input**
@@ -58,8 +52,6 @@ You're given a string `s` consisting solely of `"("` and `")"`. Return whether t
 **Output**
 
 - answer = `True`
-
-**Explanation**
 
 ### Example 5
 
@@ -71,8 +63,6 @@ You're given a string `s` consisting solely of `"("` and `")"`. Return whether t
 
 - answer = `False`
 
-**Explanation**
-
 ### Example 6
 
 **Input**
@@ -82,8 +72,6 @@ You're given a string `s` consisting solely of `"("` and `")"`. Return whether t
 **Output**
 
 - answer = `True`
-
-**Explanation**
 
 ## Solution
 

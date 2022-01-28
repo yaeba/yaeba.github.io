@@ -54,8 +54,6 @@ Given a binary tree `root`, return the same tree except every node's value is re
   });
 </script>
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Elephant-Tree.cpp"></script>

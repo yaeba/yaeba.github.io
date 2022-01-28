@@ -70,8 +70,6 @@ The in-order traversal is `[1, 5, 9, 5, 1]` which is a palindrome
 
 - answer = `False`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Palindromic-Tree.py"></script>

@@ -23,8 +23,6 @@ Given an integer `n`, return the number of 1 bits in `n`.
 
 - answer = `0`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -48,8 +46,6 @@ Given an integer `n`, return the number of 1 bits in `n`.
 **Output**
 
 - answer = `1`
-
-**Explanation**
 
 ### Example 4
 

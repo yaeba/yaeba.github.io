@@ -23,8 +23,6 @@ Given a list of integers `nums`, find the most frequently occurring element and 
 
 - answer = `5`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -35,8 +33,6 @@ Given a list of integers `nums`, find the most frequently occurring element and 
 
 - answer = `7`
 
-**Explanation**
-
 ### Example 3
 
 **Input**
@@ -46,8 +42,6 @@ Given a list of integers `nums`, find the most frequently occurring element and 
 **Output**
 
 - answer = `1`
-
-**Explanation**
 
 ## Solution
 

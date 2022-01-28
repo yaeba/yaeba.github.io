@@ -29,8 +29,6 @@ Bonus: When, during the course of a day, will the angle be zero?
 
 - answer = `121`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Clock-Angle.java"></script>

@@ -54,8 +54,6 @@ Given a binary tree `root`, remove all nodes with only one child.
   });
 </script>
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Convert-to-Full-Binary-Tree.cpp"></script>

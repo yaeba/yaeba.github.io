@@ -19,8 +19,6 @@ Given an integer `n`, return the maximum number you can make by inserting `5` an
 
 - answer = `-2345`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -31,8 +29,6 @@ Given an integer `n`, return the maximum number you can make by inserting `5` an
 
 - answer = `51`
 
-**Explanation**
-
 ### Example 3
 
 **Input**
@@ -42,8 +38,6 @@ Given an integer `n`, return the maximum number you can make by inserting `5` an
 **Output**
 
 - answer = `9523`
-
-**Explanation**
 
 ## Solution
 

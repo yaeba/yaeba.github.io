@@ -64,8 +64,6 @@ Given a binary tree `root`, return whether it's a complete binary tree.
 
 - answer = `True`
 
-**Explanation**
-
 ### Example 3
 
 **Input**
@@ -89,8 +87,6 @@ Given a binary tree `root`, return whether it's a complete binary tree.
 **Output**
 
 - answer = `False`
-
-**Explanation**
 
 ## Solution
 

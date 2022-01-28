@@ -56,8 +56,6 @@ You are given a binary tree `root` containing unique values, and an integer `tar
   });
 </script>
 
-**Explanation**
-
 ### Example 2
 
 **Input**

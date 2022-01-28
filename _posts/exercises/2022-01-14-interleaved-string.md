@@ -25,8 +25,6 @@ Given two strings `s0` and `s1`, return the two strings interleaved, starting wi
 
 - answer = `axbycz`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -37,8 +35,6 @@ Given two strings `s0` and `s1`, return the two strings interleaved, starting wi
 **Output**
 
 - answer = `axbc`
-
-**Explanation**
 
 ## Solution
 

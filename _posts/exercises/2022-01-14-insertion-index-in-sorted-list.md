@@ -37,8 +37,6 @@ This should be done in $$\mathcal{O}(\log n)$$.
 
 - answer = `2`
 
-**Explanation**
-
 ### Example 3
 
 **Input**

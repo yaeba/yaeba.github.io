@@ -28,8 +28,6 @@ Given a list of integers `nums`, sort the list in the following way:
 
 - answer = `[9, 1, 9]`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -39,8 +37,6 @@ Given a list of integers `nums`, sort the list in the following way:
 **Output**
 
 - answer = `[9, 2, 5, 3]`
-
-**Explanation**
 
 ## Solution
 

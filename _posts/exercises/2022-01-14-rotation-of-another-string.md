@@ -25,8 +25,6 @@ Given two alphabet (can be lower and/or uppercase) strings `s0` and `s1`, determ
 
 - answer = `True`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -52,8 +50,6 @@ This string is rotated on `Gar` and `dyloo`
 **Output**
 
 - answer = `True`
-
-**Explanation**
 
 ### Example 4
 

@@ -23,8 +23,6 @@ Given a lowercase alphabet string `s`, return the length of the longest substrin
 
 - answer = `3`
 
-**Explanation**
-
 ### Example 2
 
 **Input**

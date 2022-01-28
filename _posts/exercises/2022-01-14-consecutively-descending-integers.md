@@ -37,8 +37,6 @@ Given a string `s` containing digits, return whether it contains consecutively d
 
 - answer = `True`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Consecutively-Descending-Integers.py"></script>

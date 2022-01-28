@@ -23,8 +23,6 @@ Given a string `s` of words delimited by spaces, reverse the order of words.
 
 - answer = `friend my there hello`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Reverse-Words.cpp"></script>

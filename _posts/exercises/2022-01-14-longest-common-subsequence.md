@@ -40,8 +40,6 @@ Given two strings `a` and `b`, return the length of their longest common subsequ
 
 - answer = `3`
 
-**Explanation**
-
 ### Example 3
 
 **Input**
@@ -53,8 +51,6 @@ Given two strings `a` and `b`, return the length of their longest common subsequ
 
 - answer = `0`
 
-**Explanation**
-
 ### Example 4
 
 **Input**
@@ -65,8 +61,6 @@ Given two strings `a` and `b`, return the length of their longest common subsequ
 **Output**
 
 - answer = `6`
-
-**Explanation**
 
 ## Solution
 

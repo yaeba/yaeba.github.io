@@ -54,8 +54,6 @@ Given a binary tree `root`, convert it to a singly linked list using level order
   });
 </script>
 
-**Explanation**
-
 ### Example 2
 
 **Input**

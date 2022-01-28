@@ -36,8 +36,6 @@ If we only consider the lowercase characters, then `s` is `"abcba"` which is a p
 
 - answer = `False`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Noisy-Palindrome.py"></script>

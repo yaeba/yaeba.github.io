@@ -23,8 +23,6 @@ Given a list of integers sorted in ascending order `nums`, square the elements a
 
 - answer = `[0, 4, 4, 9, 81]`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -34,8 +32,6 @@ Given a list of integers sorted in ascending order `nums`, square the elements a
 **Output**
 
 - answer = `[1, 4, 9, 16, 25]`
-
-**Explanation**
 
 ## Solution
 

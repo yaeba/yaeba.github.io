@@ -68,8 +68,6 @@ Given a binary search tree `root` and an integer `val`, determine whether `val` 
 
 - answer = `False`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Search-in-a-Binary-Search-Tree.cpp"></script>

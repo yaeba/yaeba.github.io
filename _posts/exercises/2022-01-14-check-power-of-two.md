@@ -37,8 +37,6 @@ Given an integer `n` greater than or equal to `0`, return whether it is a power 
 
 - answer = `False`
 
-**Explanation**
-
 ### Example 3
 
 **Input**

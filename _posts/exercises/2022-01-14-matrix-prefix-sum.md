@@ -24,8 +24,6 @@ Given a two-dimensional integer `matrix`, return a new matrix `A` of the same di
 
 - answer = `[[2, 5], [7, 17]]`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Matrix-Prefix-Sum.cpp"></script>

@@ -40,8 +40,6 @@ Given the `root` of a binary tree, return whether its height is balanced. That i
 
 - answer = `True`
 
-**Explanation**
-
 ### Example 2
 
 **Input**

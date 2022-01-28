@@ -40,8 +40,6 @@ Given the root to a binary tree `root`, return whether it is symmetric.
 
 - answer = `True`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -66,8 +64,6 @@ Given the root to a binary tree `root`, return whether it is symmetric.
 
 - answer = `False`
 
-**Explanation**
-
 ### Example 3
 
 **Input**
@@ -91,8 +87,6 @@ Given the root to a binary tree `root`, return whether it is symmetric.
 **Output**
 
 - answer = `False`
-
-**Explanation**
 
 ### Example 4
 

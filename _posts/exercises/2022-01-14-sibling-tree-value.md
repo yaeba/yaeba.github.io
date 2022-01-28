@@ -46,8 +46,6 @@ You can assume that the solution always exists (e.x. root won't have value of `k
 
 - answer = `3`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -74,8 +72,6 @@ You can assume that the solution always exists (e.x. root won't have value of `k
 
 - answer = `8`
 
-**Explanation**
-
 ### Example 3
 
 **Input**
@@ -101,8 +97,6 @@ You can assume that the solution always exists (e.x. root won't have value of `k
 **Output**
 
 - answer = `6`
-
-**Explanation**
 
 ## Solution
 

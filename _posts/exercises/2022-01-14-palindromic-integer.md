@@ -25,8 +25,6 @@ Bonus: Can you solve it without using strings?
 
 - answer = `True`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -46,8 +44,6 @@ Bonus: Can you solve it without using strings?
 **Output**
 
 - answer = `True`
-
-**Explanation**
 
 ## Solution
 

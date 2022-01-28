@@ -50,8 +50,6 @@ We can have `"55"` as the pair and there's no triple.
 
 - answer = `False`
 
-**Explanation**
-
 ### Example 4
 
 **Input**
@@ -62,8 +60,6 @@ We can have `"55"` as the pair and there's no triple.
 
 - answer = `True`
 
-**Explanation**
-
 ### Example 5
 
 **Input**
@@ -73,8 +69,6 @@ We can have `"55"` as the pair and there's no triple.
 **Output**
 
 - answer = `True`
-
-**Explanation**
 
 ## Solution
 

@@ -23,8 +23,6 @@ Given a two-dimensional integer `matrix`, sort each of the columns in ascending 
 
 - answer = `[[0, 5, 3], [5, 10, 7], [10, 20, 30]]`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Column-Sort.py"></script>

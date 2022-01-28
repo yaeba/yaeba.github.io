@@ -63,8 +63,6 @@ The values at index `2` and `4` are considered peaks since they are larger than 
 
 - answer = `[]`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Find-Local-Peaks.cpp"></script>

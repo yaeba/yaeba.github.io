@@ -27,8 +27,6 @@ Return the same list in the same representation except modified so that `1` is a
 
 - answer = `[1, 9, 2]`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -38,8 +36,6 @@ Return the same list in the same representation except modified so that `1` is a
 **Output**
 
 - answer = `[1, 0]`
-
-**Explanation**
 
 ## Solution
 

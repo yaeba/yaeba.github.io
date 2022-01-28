@@ -24,8 +24,6 @@ You are given two lowercase alphabet strings `s` and `t`, both of them the same 
 
 - answer = `True`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -36,8 +34,6 @@ You are given two lowercase alphabet strings `s` and `t`, both of them the same 
 **Output**
 
 - answer = `True`
-
-**Explanation**
 
 ## Solution
 

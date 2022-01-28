@@ -105,8 +105,6 @@ We can pick `7` from `a` and `2` from `b`.
 
 - answer = `False`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Sum-of-Two-Numbers-in-BSTs.cpp"></script>

@@ -43,8 +43,6 @@ An upside down number is one that appears the same when flipped `180` degrees. G
 
 - answer = `['101', '111', '181', '609', '619', '689', '808', '818', '888', '906', '916', '986']`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Upside-Down-Numbers.py"></script>

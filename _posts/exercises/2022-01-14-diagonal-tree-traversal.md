@@ -74,8 +74,6 @@ The diagonals are:
 
 - answer = `[4, 2]`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Diagonal-Tree-Traversal.cpp"></script>

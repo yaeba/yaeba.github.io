@@ -41,8 +41,6 @@ Given a list of unique integers `preorder` and another list of unique integers `
   });
 </script>
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Tree-From-PreInorder-Traversals.py"></script>

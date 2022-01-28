@@ -40,8 +40,6 @@ Given a binary tree `root`, return values of the nodes in each level, alternatin
 
 - answer = `[3, 4, 0, 2, 1]`
 
-**Explanation**
-
 ## Solution
 
 <script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Level-Order-Alternating.py"></script>

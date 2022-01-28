@@ -25,8 +25,6 @@ That is, if a list contains repeated characters, they should be replaced with a 
 
 - answer = `a`
 
-**Explanation**
-
 ### Example 2
 
 **Input**
@@ -36,8 +34,6 @@ That is, if a list contains repeated characters, they should be replaced with a 
 **Output**
 
 - answer = `abcadf`
-
-**Explanation**
 
 ## Solution
 

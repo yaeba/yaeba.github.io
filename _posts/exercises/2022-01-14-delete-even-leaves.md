@@ -40,13 +40,13 @@ Given a binary tree `root`, repeatedly delete all leaves that have even values. 
 
 - answer =
 
-<div id="output" style="text-align: center"></div>
+<div id="example1Output" style="text-align: center"></div>
 <script>
   var viz = new Viz();
   
-  viz.renderSVGElement("digraph output { 0 [label = 3]; C0 [style = invis, width = 0, label = \"\"]; 1 [label = 4]; C1 [style = invis, width = 0, label = \"\"]; 2 [label = 6]; C2 [style = invis, width = 0, label = \"\"]; 3 [label = 7]; C3 [style = invis, width = 0, label = \"\"]; 0 -> L0 [style = invis]; 0 -> C0 [style = invis]; 0 -> 1; {rank = same; L0 -> C0 -> 1 [style = invis]}; L0 [style = invis, width = 0, label = \"\"]; 1 -> 2; 1 -> C1 [style = invis]; 1 -> R1 [style = invis]; {rank = same; 2 -> C1 -> R1 [style = invis]}; R1 [style = invis, width = 0, label = \"\"]; 2 -> L2 [style = invis]; 2 -> C2 [style = invis]; 2 -> 3; {rank = same; L2 -> C2 -> 3 [style = invis]}; L2 [style = invis, width = 0, label = \"\"]; 3 -> L3 [style = invis]; 3 -> C3 [style = invis]; 3 -> R3 [style = invis]; {rank = same; L3 -> C3 -> R3 [style = invis]}; L3 [style = invis, width = 0, label = \"\"]; R3 [style = invis, width = 0, label = \"\"] }")
+  viz.renderSVGElement("digraph example1Output { 0 [label = 3]; C0 [style = invis, width = 0, label = \"\"]; 1 [label = 4]; C1 [style = invis, width = 0, label = \"\"]; 2 [label = 6]; C2 [style = invis, width = 0, label = \"\"]; 3 [label = 7]; C3 [style = invis, width = 0, label = \"\"]; 0 -> L0 [style = invis]; 0 -> C0 [style = invis]; 0 -> 1; {rank = same; L0 -> C0 -> 1 [style = invis]}; L0 [style = invis, width = 0, label = \"\"]; 1 -> 2; 1 -> C1 [style = invis]; 1 -> R1 [style = invis]; {rank = same; 2 -> C1 -> R1 [style = invis]}; R1 [style = invis, width = 0, label = \"\"]; 2 -> L2 [style = invis]; 2 -> C2 [style = invis]; 2 -> 3; {rank = same; L2 -> C2 -> 3 [style = invis]}; L2 [style = invis, width = 0, label = \"\"]; 3 -> L3 [style = invis]; 3 -> C3 [style = invis]; 3 -> R3 [style = invis]; {rank = same; L3 -> C3 -> R3 [style = invis]}; L3 [style = invis, width = 0, label = \"\"]; R3 [style = invis, width = 0, label = \"\"] }")
   .then(function(element) {
-    document.getElementById("output").appendChild(element);
+    document.getElementById("example1Output").appendChild(element);
   })
   .catch(error => {
     viz = new Viz();

@@ -42,13 +42,13 @@ You are given a binary tree `root` containing unique values, and an integer `tar
 
 - answer =
 
-<div id="output" style="text-align: center"></div>
+<div id="example1Output" style="text-align: center"></div>
 <script>
   var viz = new Viz();
   
-  viz.renderSVGElement("digraph output { 0 [label = 6]; C0 [style = invis, width = 0, label = \"\"]; 1 [label = 7]; C1 [style = invis, width = 0, label = \"\"]; 0 -> 1; 0 -> C0 [style = invis]; 0 -> R0 [style = invis]; {rank = same; 1 -> C0 -> R0 [style = invis]}; R0 [style = invis, width = 0, label = \"\"]; 1 -> L1 [style = invis]; 1 -> C1 [style = invis]; 1 -> R1 [style = invis]; {rank = same; L1 -> C1 -> R1 [style = invis]}; L1 [style = invis, width = 0, label = \"\"]; R1 [style = invis, width = 0, label = \"\"] }")
+  viz.renderSVGElement("digraph example1Output { 0 [label = 6]; C0 [style = invis, width = 0, label = \"\"]; 1 [label = 7]; C1 [style = invis, width = 0, label = \"\"]; 0 -> 1; 0 -> C0 [style = invis]; 0 -> R0 [style = invis]; {rank = same; 1 -> C0 -> R0 [style = invis]}; R0 [style = invis, width = 0, label = \"\"]; 1 -> L1 [style = invis]; 1 -> C1 [style = invis]; 1 -> R1 [style = invis]; {rank = same; L1 -> C1 -> R1 [style = invis]}; L1 [style = invis, width = 0, label = \"\"]; R1 [style = invis, width = 0, label = \"\"] }")
   .then(function(element) {
-    document.getElementById("output").appendChild(element);
+    document.getElementById("example1Output").appendChild(element);
   })
   .catch(error => {
     viz = new Viz();
@@ -82,13 +82,13 @@ You are given a binary tree `root` containing unique values, and an integer `tar
 
 - answer =
 
-<div id="output" style="text-align: center"></div>
+<div id="example2Output" style="text-align: center"></div>
 <script>
   var viz = new Viz();
   
-  viz.renderSVGElement("digraph output {  }")
+  viz.renderSVGElement("digraph example2Output {  }")
   .then(function(element) {
-    document.getElementById("output").appendChild(element);
+    document.getElementById("example2Output").appendChild(element);
   })
   .catch(error => {
     viz = new Viz();
@@ -126,13 +126,13 @@ There's no node directly to the right of `3`.
 
 - answer =
 
-<div id="output" style="text-align: center"></div>
+<div id="example3Output" style="text-align: center"></div>
 <script>
   var viz = new Viz();
   
-  viz.renderSVGElement("digraph output {  }")
+  viz.renderSVGElement("digraph example3Output {  }")
   .then(function(element) {
-    document.getElementById("output").appendChild(element);
+    document.getElementById("example3Output").appendChild(element);
   })
   .catch(error => {
     viz = new Viz();

@@ -40,13 +40,13 @@ Given a binary tree `root`, remove all nodes with only one child.
 
 - answer =
 
-<div id="output" style="text-align: center"></div>
+<div id="example1Output" style="text-align: center"></div>
 <script>
   var viz = new Viz();
   
-  viz.renderSVGElement("digraph output { 0 [label = 1]; C0 [style = invis, width = 0, label = \"\"]; 1 [label = 0]; C1 [style = invis, width = 0, label = \"\"]; 2 [label = 2]; C2 [style = invis, width = 0, label = \"\"]; 0 -> 1; 0 -> C0 [style = invis]; 0 -> 2; {rank = same; 1 -> C0 -> 2 [style = invis]}; 1 -> L1 [style = invis]; 1 -> C1 [style = invis]; 1 -> R1 [style = invis]; {rank = same; L1 -> C1 -> R1 [style = invis]}; L1 [style = invis, width = 0, label = \"\"]; R1 [style = invis, width = 0, label = \"\"]; 2 -> L2 [style = invis]; 2 -> C2 [style = invis]; 2 -> R2 [style = invis]; {rank = same; L2 -> C2 -> R2 [style = invis]}; L2 [style = invis, width = 0, label = \"\"]; R2 [style = invis, width = 0, label = \"\"] }")
+  viz.renderSVGElement("digraph example1Output { 0 [label = 1]; C0 [style = invis, width = 0, label = \"\"]; 1 [label = 0]; C1 [style = invis, width = 0, label = \"\"]; 2 [label = 2]; C2 [style = invis, width = 0, label = \"\"]; 0 -> 1; 0 -> C0 [style = invis]; 0 -> 2; {rank = same; 1 -> C0 -> 2 [style = invis]}; 1 -> L1 [style = invis]; 1 -> C1 [style = invis]; 1 -> R1 [style = invis]; {rank = same; L1 -> C1 -> R1 [style = invis]}; L1 [style = invis, width = 0, label = \"\"]; R1 [style = invis, width = 0, label = \"\"]; 2 -> L2 [style = invis]; 2 -> C2 [style = invis]; 2 -> R2 [style = invis]; {rank = same; L2 -> C2 -> R2 [style = invis]}; L2 [style = invis, width = 0, label = \"\"]; R2 [style = invis, width = 0, label = \"\"] }")
   .then(function(element) {
-    document.getElementById("output").appendChild(element);
+    document.getElementById("example1Output").appendChild(element);
   })
   .catch(error => {
     viz = new Viz();

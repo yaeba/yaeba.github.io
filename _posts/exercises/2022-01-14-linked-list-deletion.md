@@ -42,13 +42,13 @@ Given a singly linked list `node`, and an integer `target`, return the same link
 
 - answer =
 
-<div id="output" style="text-align: center"></div>
+<div id="example1Output" style="text-align: center"></div>
 <script>
   var viz = new Viz();
   
-  viz.renderSVGElement("digraph output { 0 [label = 0]; 1 [label = 2]; 0->1; rankdir=LR }")
+  viz.renderSVGElement("digraph example1Output { 0 [label = 0]; 1 [label = 2]; 0->1; rankdir=LR }")
   .then(function(element) {
-    document.getElementById("output").appendChild(element);
+    document.getElementById("example1Output").appendChild(element);
   })
   .catch(error => {
     viz = new Viz();

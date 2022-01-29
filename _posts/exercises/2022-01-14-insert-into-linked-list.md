@@ -43,13 +43,13 @@ You are given a singly linked list `head` as well as integers `pos` and `val`. I
 
 - answer =
 
-<div id="output" style="text-align: center"></div>
+<div id="example1Output" style="text-align: center"></div>
 <script>
   var viz = new Viz();
   
-  viz.renderSVGElement("digraph output { 0 [label = 1]; 1 [label = 3]; 2 [label = 9]; 3 [label = 5]; 4 [label = 7]; 0->1->2->3->4; rankdir=LR }")
+  viz.renderSVGElement("digraph example1Output { 0 [label = 1]; 1 [label = 3]; 2 [label = 9]; 3 [label = 5]; 4 [label = 7]; 0->1->2->3->4; rankdir=LR }")
   .then(function(element) {
-    document.getElementById("output").appendChild(element);
+    document.getElementById("example1Output").appendChild(element);
   })
   .catch(error => {
     viz = new Viz();
@@ -84,13 +84,13 @@ You are given a singly linked list `head` as well as integers `pos` and `val`. I
 
 - answer =
 
-<div id="output" style="text-align: center"></div>
+<div id="example2Output" style="text-align: center"></div>
 <script>
   var viz = new Viz();
   
-  viz.renderSVGElement("digraph output { 0 [label = 3]; 1 [label = 1]; 0->1; rankdir=LR }")
+  viz.renderSVGElement("digraph example2Output { 0 [label = 3]; 1 [label = 1]; 0->1; rankdir=LR }")
   .then(function(element) {
-    document.getElementById("output").appendChild(element);
+    document.getElementById("example2Output").appendChild(element);
   })
   .catch(error => {
     viz = new Viz();
@@ -125,13 +125,13 @@ You are given a singly linked list `head` as well as integers `pos` and `val`. I
 
 - answer =
 
-<div id="output" style="text-align: center"></div>
+<div id="example3Output" style="text-align: center"></div>
 <script>
   var viz = new Viz();
   
-  viz.renderSVGElement("digraph output { 0 [label = 2]; 1 [label = 5]; 0->1; rankdir=LR }")
+  viz.renderSVGElement("digraph example3Output { 0 [label = 2]; 1 [label = 5]; 0->1; rankdir=LR }")
   .then(function(element) {
-    document.getElementById("output").appendChild(element);
+    document.getElementById("example3Output").appendChild(element);
   })
   .catch(error => {
     viz = new Viz();

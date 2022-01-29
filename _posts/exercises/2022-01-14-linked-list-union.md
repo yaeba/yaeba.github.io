@@ -57,13 +57,13 @@ Given two sorted linked lists `node0`, and `node`, return a new sorted linked li
 
 - answer =
 
-<div id="output" style="text-align: center"></div>
+<div id="example1Output" style="text-align: center"></div>
 <script>
   var viz = new Viz();
   
-  viz.renderSVGElement("digraph output { 0 [label = 1]; 1 [label = 2]; 2 [label = 3]; 3 [label = 4]; 0->1->2->3; rankdir=LR }")
+  viz.renderSVGElement("digraph example1Output { 0 [label = 1]; 1 [label = 2]; 2 [label = 3]; 3 [label = 4]; 0->1->2->3; rankdir=LR }")
   .then(function(element) {
-    document.getElementById("output").appendChild(element);
+    document.getElementById("example1Output").appendChild(element);
   })
   .catch(error => {
     viz = new Viz();

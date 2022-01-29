@@ -40,13 +40,13 @@ Given a binary tree `root`, convert it to a singly linked list using level order
 
 - answer =
 
-<div id="output" style="text-align: center"></div>
+<div id="example1Output" style="text-align: center"></div>
 <script>
   var viz = new Viz();
   
-  viz.renderSVGElement("digraph output { 0 [label = 1]; 1 [label = 0]; 2 [label = 2]; 0->1->2; rankdir=LR }")
+  viz.renderSVGElement("digraph example1Output { 0 [label = 1]; 1 [label = 0]; 2 [label = 2]; 0->1->2; rankdir=LR }")
   .then(function(element) {
-    document.getElementById("output").appendChild(element);
+    document.getElementById("example1Output").appendChild(element);
   })
   .catch(error => {
     viz = new Viz();
@@ -78,13 +78,13 @@ Given a binary tree `root`, convert it to a singly linked list using level order
 
 - answer =
 
-<div id="output" style="text-align: center"></div>
+<div id="example2Output" style="text-align: center"></div>
 <script>
   var viz = new Viz();
   
-  viz.renderSVGElement("digraph output { 0 [label = 1]; 1 [label = 2]; 2 [label = 3]; 3 [label = 4]; 4 [label = 5]; 0->1->2->3->4; rankdir=LR }")
+  viz.renderSVGElement("digraph example2Output { 0 [label = 1]; 1 [label = 2]; 2 [label = 3]; 3 [label = 4]; 4 [label = 5]; 0->1->2->3->4; rankdir=LR }")
   .then(function(element) {
-    document.getElementById("output").appendChild(element);
+    document.getElementById("example2Output").appendChild(element);
   })
   .catch(error => {
     viz = new Viz();

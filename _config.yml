@@ -27,7 +27,7 @@ repository               : "yaeba/yaeba.github.io" # GitHub username/repo-name e
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
-# breadcrumbs            : false # true, false (default)
+breadcrumbs              : true # true, false (default)
 words_per_minute         : 100
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
@@ -292,37 +292,42 @@ compress_html:
 
 # Defaults
 defaults:
-  # _posts/blog
+  # _posts/
   - scope:
-      path: "_posts/blog"
+      path: ""
       type: posts
     values:
       layout: single
       author_profile: true
       read_time: true
+      show_date: true
       comments: true
       share: true
       related: true
-      toc_sticky: true
-      categories: blog
       header:
         teaser: /assets/images/teaser.jpg
+  # _posts/blog
+  - scope:
+      path: "_posts/blog"
+      type: posts
+    values:
+      toc_sticky: true
+      categories: blog
   # _posts/exercises
   - scope:
       path: "_posts/exercises"
       type: posts
     values:
       classes: wide
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
       usemathjax: true
       categories: exercises
-      header:
-        teaser: /assets/images/teaser.jpg
+  # _posts/projects
+  - scope:
+      path: "_posts/projects"
+      type: posts
+    values:
+      classes: wide
+      categories: projects
   # _pages
   - scope:
       path: "_pages"

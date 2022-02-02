@@ -52,6 +52,9 @@ header:
         args: []
         ports:
           - containerPort: 80
+        env:
+          - name: KEY
+            value: value
   ```
 
 ### Imperative commands
@@ -79,6 +82,25 @@ header:
   `k delete pods --force --grace-period=0`
 
 ## Further reading
+
+### Immutable fields
+
+A pod's specification is mostly unchangeable once it is created.
+
+To change certain fields in the pod specification, it must be deleted, recreated and rescheduled.
+
+We can only use `k patch`, `k apply` and `k edit` to update fields like
+
+- `spec.containers[*].image`
+- `spec.initContainers[*].image`
+- `spec.activeDeadlineSeconds`
+- `spec.tolerations`
+
+To update other fields, such as `spec.containers[*].command`, `spec.restartPolicy` etc, quickest way is to do\
+`k replace --force -f <new-pod>`\
+This will delete the pod before creating an updated one.
+
+A better solution is to employ controller (such as `Deployment`) to manage the destruction and creation for us.
 
 ### Pod phase
 

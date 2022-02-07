@@ -9,7 +9,7 @@ layout: default
 {% endif %}
 
 {% if page.url != "/" and site.breadcrumbs %}
-  {% unless paginator %}
+  {% unless paginator or page.no_breadcrumbs %}
     {% include breadcrumbs.html %}
   {% endunless %}
 {% endif %}

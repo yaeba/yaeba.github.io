@@ -1,5 +1,5 @@
 tasks:
-  - init: bundle install
+  - init: bundle install --path vendor/bundle
     command: JEKYLL_ENV=production bundle exec jekyll serve
 
 ports:

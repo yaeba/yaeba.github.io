@@ -2,6 +2,8 @@
 title: "Imprinted Methylation"
 excerpt: "Detecting imprinted methylation from Nanopore sequencing reads"
 tags: bioinformatics
+header:
+  teaser: /assets/images/teaser-dna.jpg
 ---
 
 In this project, I reproduced the results from **Gigante et al., 2018: Using long-read sequencing to detect imprinted DNA methylation** (research paper [here](https://academic.oup.com/nar/article/47/8/e46/5356940)).

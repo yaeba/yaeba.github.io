@@ -2,6 +2,8 @@
 title: "New York City Taxi Driver Model"
 excerpt: "A predictive taxi driver model to maximize the total earnings - based on the popular public NYC Taxi and Limousine Commission (TLC) trip data"
 tags: model
+header:
+  teaser: /assets/images/teaser-taxi.jpg
 ---
 
 ## Overview

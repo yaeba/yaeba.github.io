@@ -2,6 +2,8 @@
 title: "New York City Taxi Trips Analysis"
 excerpt: "Analysis and modelling on the New York City Taxi Trip data that contains millions of trip records, all in R"
 tags: visualization
+header:
+  teaser: /assets/images/teaser-taxi.jpg
 ---
 
 If you are a big fan of R, then this is for you.

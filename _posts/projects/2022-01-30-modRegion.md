@@ -2,6 +2,8 @@
 title: "ModRegion: Base Modification Results Tool"
 excerpt: "A CLI tool to quickly access, query and merge per-read base modification results from different software tools"
 tags: bioinformatics
+header:
+  teaser: /assets/images/teaser-dna.jpg
 ---
 
 ## Background

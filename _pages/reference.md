@@ -1,7 +1,7 @@
 ---
-title: "References"
+title: "Reference"
 excerpt: "What others think of me"
-permalink: /references/
+permalink: /reference/
 no_breadcrumbs: true
 ---
 

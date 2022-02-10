@@ -241,7 +241,7 @@ permalink: /about/
 
 # More? Read here
 
-- [Resume]({{ site.url }}/resume)
-- [Academic transcript]({{ site.url }}/academic-transcript/)
-- [What others think of me]({{ site.url }}/references/)
+- [Resume](/resume/)
+- [Academic transcript](/academic-transcript/)
+- [What others think of me](/reference/)
 - [LinkedIn](https://www.linkedin.com/in/xuanken-t-485a8b171)

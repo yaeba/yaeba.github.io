@@ -4,6 +4,7 @@ excerpt: "A predictive taxi driver model to maximize the total earnings - based 
 tags: model
 header:
   teaser: /assets/images/teaser-taxi.jpg
+featured: true
 ---
 
 ## Overview

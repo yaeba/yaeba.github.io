@@ -4,6 +4,7 @@ excerpt: "A CLI tool to quickly access, query and merge per-read base modificati
 tags: bioinformatics
 header:
   teaser: /assets/images/teaser-dna.jpg
+featured: true
 ---
 
 ## Background

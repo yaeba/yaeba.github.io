@@ -11,8 +11,8 @@ header:
 
 ## Useful links
 
-- [https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller](https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller){:target="\_blank"}
-- [https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/){:target="\_blank"}
+- [https://kubernetes.io/docs/concepts/workloads/controllers/&#8203;replicationcontroller](https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller){:target="\_blank"}
+- [https://kubernetes.io/docs/concepts/workloads/controllers/&#8203;replicaset/](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/){:target="\_blank"}
 
 ## Concepts
 

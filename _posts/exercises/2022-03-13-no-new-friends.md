@@ -20,7 +20,11 @@ Return whether everyone has at least one friend.
 **Input**
 
 - n = `3`
-- friends = `[[0, 1]]`
+- friends =
+
+```
+[[0,1]]
+```
 
 **Output**
 
@@ -35,7 +39,12 @@ Person `2` is not friends with anyone.
 **Input**
 
 - n = `3`
-- friends = `[[0, 1], [1, 2]]`
+- friends =
+
+```
+[[0,1],
+ [1,2]]
+```
 
 **Output**
 

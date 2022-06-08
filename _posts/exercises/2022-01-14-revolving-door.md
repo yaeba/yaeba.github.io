@@ -25,7 +25,15 @@ Return a sorted list of lists where each element contains `[time, direction]`, m
 
 **Input**
 
-- requests = `[[1, 0], [2, 1], [5, 0], [5, 1], [2, 0]]`
+- requests =
+
+```
+[[1,0],
+ [2,1],
+ [5,0],
+ [5,1],
+ [2,0]]
+```
 
 **Output**
 
@@ -45,7 +53,14 @@ The door starts as `in`
 
 **Input**
 
-- requests = `[[1, 0], [2, 0], [2, 1], [1, 1]]`
+- requests =
+
+```
+[[1,0],
+ [2,0],
+ [2,1],
+ [1,1]]
+```
 
 **Output**
 

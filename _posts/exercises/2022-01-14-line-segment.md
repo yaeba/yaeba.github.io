@@ -17,7 +17,13 @@ Given a list of `[x, y]` coordinates in a Cartesian plane, return whether the co
 
 **Input**
 
-- coordinates = `[[1, 1], [3, 3], [7, 7]]`
+- coordinates =
+
+```
+[[1,1],
+ [3,3],
+ [7,7]]
+```
 
 **Output**
 
@@ -31,7 +37,13 @@ This forms a line segment with a slope 1
 
 **Input**
 
-- coordinates = `[[1, 1], [3, 3], [4, 6]]`
+- coordinates =
+
+```
+[[1,1],
+ [3,3],
+ [4,6]]
+```
 
 **Output**
 

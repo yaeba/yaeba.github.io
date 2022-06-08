@@ -18,7 +18,13 @@ You are given a two-dimensional list of integers `matrix`. Return the minimum su
 
 **Input**
 
-- matrix = `[[3, 0, 3], [1, 4, 3], [-2, 3, -3]]`
+- matrix =
+
+```
+[[ 3, 0, 3],
+ [ 1, 4, 3],
+ [-2, 3,-3]]
+```
 
 **Output**
 

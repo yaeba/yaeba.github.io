@@ -17,7 +17,13 @@ You are given a two-dimensional integer `matrix` where each cell represents numb
 
 **Input**
 
-- matrix = `[[0, 3, 1, 1], [2, 0, 0, 4], [1, 5, 3, 1]]`
+- matrix =
+
+```
+[[0,3,1,1],
+ [2,0,0,4],
+ [1,5,3,1]]
+```
 
 **Output**
 
@@ -31,7 +37,12 @@ We take the following path: [0, 2, 1, 5, 3, 1]
 
 **Input**
 
-- matrix = `[[0, 3, 1, 1], [2, 0, 0, 4]]`
+- matrix =
+
+```
+[[0,3,1,1],
+ [2,0,0,4]]
+```
 
 **Output**
 
@@ -45,7 +56,13 @@ We take the following path: [0, 3, 1, 1, 4]
 
 **Input**
 
-- matrix = `[[0, 2, 1], [2, 5, 0], [4, 1, 3]]`
+- matrix =
+
+```
+[[0,2,1],
+ [2,5,0],
+ [4,1,3]]
+```
 
 **Output**
 

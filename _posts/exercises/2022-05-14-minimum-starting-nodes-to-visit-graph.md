@@ -17,7 +17,14 @@ You are given a two-dimensional list of integers `edges` representing a connecte
 
 **Input**
 
-- edges = `[[1, 0], [2, 0], [3, 2], [4, 3]]`
+- edges =
+
+```
+[[1,0],
+ [2,0],
+ [3,2],
+ [4,3]]
+```
 
 **Output**
 
@@ -27,7 +34,13 @@ You are given a two-dimensional list of integers `edges` representing a connecte
 
 **Input**
 
-- edges = `[[0, 1], [1, 2], [3, 2]]`
+- edges =
+
+```
+[[0,1],
+ [1,2],
+ [3,2]]
+```
 
 **Output**
 

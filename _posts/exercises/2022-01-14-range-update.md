@@ -21,7 +21,13 @@ Apply all operations and return the final list.
 **Input**
 
 - nums = `[7, 3, 1, -10, 3]`
-- operations = `[[0, 0, 3], [1, 3, 2], [2, 3, 5]]`
+- operations =
+
+```
+[[0,0,3],
+ [1,3,2],
+ [2,3,5]]
+```
 
 **Output**
 

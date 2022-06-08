@@ -17,7 +17,13 @@ Given a two-dimensional integer `matrix`, sort each of the columns in ascending 
 
 **Input**
 
-- matrix = `[[10, 20, 30], [5, 5, 3], [0, 10, 7]]`
+- matrix =
+
+```
+[[10,20,30],
+ [ 5, 5, 3],
+ [ 0,10, 7]]
+```
 
 **Output**
 

@@ -19,7 +19,14 @@ Return the minimum number of additional 5-star reviews we need such that the per
 
 **Input**
 
-- reviews = `[[4, 4], [1, 2], [3, 6]]`
+- reviews =
+
+```
+[[4,4],
+ [1,2],
+ [3,6]]
+```
+
 - threshold = `77`
 
 **Output**
@@ -34,7 +41,12 @@ So in total there were `8` 5-star reviews and a total of `12` reviews. To reach 
 
 **Input**
 
-- reviews = `[[1, 1]]`
+- reviews =
+
+```
+[[1,1]]
+```
+
 - threshold = `100`
 
 **Output**
@@ -49,7 +61,12 @@ We're already at `100`% 5-star reviews.
 
 **Input**
 
-- reviews = `[[10, 20]]`
+- reviews =
+
+```
+[[10,20]]
+```
+
 - threshold = `50`
 
 **Output**

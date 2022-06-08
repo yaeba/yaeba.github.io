@@ -17,7 +17,12 @@ Given a two-dimensional integer `matrix` of `1`s and `0`s where `0` represents e
 
 **Input**
 
-- matrix = `[[0, 1, 1], [0, 1, 0]]`
+- matrix =
+
+```
+[[0,1,1],
+ [0,1,0]]
+```
 
 **Output**
 

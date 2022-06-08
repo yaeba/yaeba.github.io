@@ -17,7 +17,13 @@ Given a two-dimensional square `matrix`, rotate in-place it 90 degrees counter-c
 
 **Input**
 
-- matrix = `[[1, 2, 3], [4, 5, 6], [7, 8, 9]]`
+- matrix =
+
+```
+[[1,2,3],
+ [4,5,6],
+ [7,8,9]]
+```
 
 **Output**
 

@@ -17,7 +17,13 @@ Given a list of time exclusive `intervals` for different movie showings (possibl
 
 **Input**
 
-- intervals = `[[0, 1], [0, 1], [0, 1]]`
+- intervals =
+
+```
+[[0,1],
+ [0,1],
+ [0,1]]
+```
 
 **Output**
 
@@ -31,7 +37,13 @@ The three intervals happen all at the same time so we need `3`.
 
 **Input**
 
-- intervals = `[[30, 75], [0, 50], [60, 150]]`
+- intervals =
+
+```
+[[ 30, 75],
+ [  0, 50],
+ [ 60,150]]
+```
 
 **Output**
 
@@ -45,7 +57,12 @@ The three intervals happen all at the same time so we need `3`.
 
 **Input**
 
-- intervals = `[[10, 20], [20, 30]]`
+- intervals =
+
+```
+[[10,20],
+ [20,30]]
+```
 
 **Output**
 

@@ -18,7 +18,15 @@ Return the number of intervals that are intersecting at `point`.
 
 **Input**
 
-- intervals = `[[1, 5], [3, 9], [4, 8], [10, 13]]`
+- intervals =
+
+```
+[[ 1, 5],
+ [ 3, 9],
+ [ 4, 8],
+ [10,13]]
+```
+
 - point = `4`
 
 **Output**

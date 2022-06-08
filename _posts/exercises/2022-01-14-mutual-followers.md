@@ -19,7 +19,14 @@ Return the list of people who follow someone that follows them back, sorted in a
 
 **Input**
 
-- relations = `[[0, 1], [2, 3], [3, 4], [1, 0]]`
+- relations =
+
+```
+[[0,1],
+ [2,3],
+ [3,4],
+ [1,0]]
+```
 
 **Output**
 
@@ -33,7 +40,14 @@ Return the list of people who follow someone that follows them back, sorted in a
 
 **Input**
 
-- relations = `[[0, 1], [1, 2], [2, 3], [3, 0]]`
+- relations =
+
+```
+[[0,1],
+ [1,2],
+ [2,3],
+ [3,0]]
+```
 
 **Output**
 

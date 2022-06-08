@@ -17,7 +17,14 @@ You are given a two-dimensional `matrix` of unique strings representing city blo
 
 **Input**
 
-- matrix = `[['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']]`
+- matrix =
+
+```
+[['a','b','c'],
+ ['d','e','f'],
+ ['g','h','i']]
+```
+
 - blocks = `['h', 'b', 'c']`
 
 **Output**

@@ -19,7 +19,14 @@ This should be done in $$\mathcal{O}(n + m)$$ time.
 
 **Input**
 
-- matrix = `[[1, 3, 9], [2, 5, 10], [5, 7, 13]]`
+- matrix =
+
+```
+[[ 1, 3, 9],
+ [ 2, 5,10],
+ [ 5, 7,13]]
+```
+
 - target = `7`
 
 **Output**

@@ -17,7 +17,13 @@ You are given a two-dimensional list of integers `matrix` where each row is sort
 
 **Input**
 
-- matrix = `[[1, 2, 4], [4, 9, 9], [0, 2, 4]]`
+- matrix =
+
+```
+[[1,2,4],
+ [4,9,9],
+ [0,2,4]]
+```
 
 **Output**
 

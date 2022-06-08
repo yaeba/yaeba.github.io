@@ -17,7 +17,14 @@ Given a two-dimensional integer `matrix`, where every row and column is sorted i
 
 **Input**
 
-- matrix = `[[1, 3, 30], [2, 3, 31], [5, 5, 32]]`
+- matrix =
+
+```
+[[ 1, 3,30],
+ [ 2, 3,31],
+ [ 5, 5,32]]
+```
+
 - k = `4`
 
 **Output**
@@ -28,7 +35,12 @@ Given a two-dimensional integer `matrix`, where every row and column is sorted i
 
 **Input**
 
-- matrix = `[[1, 2, 3]]`
+- matrix =
+
+```
+[[1,2,3]]
+```
+
 - k = `0`
 
 **Output**
@@ -39,7 +51,14 @@ Given a two-dimensional integer `matrix`, where every row and column is sorted i
 
 **Input**
 
-- matrix = `[[1], [2], [3]]`
+- matrix =
+
+```
+[[1],
+ [2],
+ [3]]
+```
+
 - k = `2`
 
 **Output**

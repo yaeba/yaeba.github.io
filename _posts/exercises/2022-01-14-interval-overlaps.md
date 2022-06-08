@@ -20,8 +20,20 @@ Return the overlap of the two intervals sorted in ascending order.
 
 **Input**
 
-- l0 = `[[1, 3], [5, 6], [7, 9]]`
-- l1 = `[[1, 4], [5, 7]]`
+- l0 =
+
+```
+[[1,3],
+ [5,6],
+ [7,9]]
+```
+
+- l1 =
+
+```
+[[1,4],
+ [5,7]]
+```
 
 **Output**
 
@@ -31,8 +43,19 @@ Return the overlap of the two intervals sorted in ascending order.
 
 **Input**
 
-- l0 = `[[1, 3], [5, 6], [7, 9]]`
-- l1 = `[[100, 200]]`
+- l0 =
+
+```
+[[1,3],
+ [5,6],
+ [7,9]]
+```
+
+- l1 =
+
+```
+[[100,200]]
+```
 
 **Output**
 

@@ -20,7 +20,14 @@ You are given a two dimensional `matrix` where a `1` represents a live cell and 
 
 **Input**
 
-- matrix = `[[1, 1, 1, 0], [0, 1, 0, 1], [0, 1, 0, 0], [1, 1, 0, 1]]`
+- matrix =
+
+```
+[[1,1,1,0],
+ [0,1,0,1],
+ [0,1,0,0],
+ [1,1,0,1]]
+```
 
 **Output**
 

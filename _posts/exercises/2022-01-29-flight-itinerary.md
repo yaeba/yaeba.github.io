@@ -19,7 +19,13 @@ Note: you can assume that no airport was visited twice.
 
 **Input**
 
-- flights = `[['WRE', 'RPM'], ['AGN', 'WRE'], ['NTL', 'AGN']]`
+- flights =
+
+```
+[['WRE','RPM'],
+ ['AGN','WRE'],
+ ['NTL','AGN']]
+```
 
 **Output**
 

@@ -16,7 +16,13 @@ Given a two-dimensional integer `matrix`, return the total number of integers wh
 
 **Input**
 
-- matrix = `[[1, 3, 2], [6, 6, 5], [1, 5, 7]]`
+- matrix =
+
+```
+[[1,3,2],
+ [6,6,5],
+ [1,5,7]]
+```
 
 **Output**
 
@@ -30,7 +36,14 @@ The 3 big numbers are 6, 6, and 7.
 
 **Input**
 
-- matrix = `[[1, 2, 3, 2], [3, 2, 3, 2], [1, 2, 2, 3], [1, 1, 1, 1]]`
+- matrix =
+
+```
+[[1,2,3,2],
+ [3,2,3,2],
+ [1,2,2,3],
+ [1,1,1,1]]
+```
 
 **Output**
 

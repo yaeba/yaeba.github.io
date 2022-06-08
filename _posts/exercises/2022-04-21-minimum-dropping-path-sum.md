@@ -18,7 +18,13 @@ You are given a two-dimensional list of integers `matrix`. Return the minimum su
 
 **Input**
 
-- matrix = `[[4, 5, -2], [2, 6, 1], [3, 1, 2]]`
+- matrix =
+
+```
+[[ 4, 5,-2],
+ [ 2, 6, 1],
+ [ 3, 1, 2]]
+```
 
 **Output**
 
@@ -32,7 +38,13 @@ We can take `-2` from the first row, `2` from the second row, and `1` from the l
 
 **Input**
 
-- matrix = `[[3, 0, 3], [2, 1, 3], [-2, 3, 0]]`
+- matrix =
+
+```
+[[ 3, 0, 3],
+ [ 2, 1, 3],
+ [-2, 3, 0]]
+```
 
 **Output**
 

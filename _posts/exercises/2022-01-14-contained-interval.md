@@ -16,7 +16,14 @@ You are given a two-dimensional list of integers `intervals` where each element 
 
 **Input**
 
-- intervals = `[[1, 3], [4, 10], [4, 8], [9, 9]]`
+- intervals =
+
+```
+[[ 1, 3],
+ [ 4,10],
+ [ 4, 8],
+ [ 9, 9]]
+```
 
 **Output**
 
@@ -30,7 +37,13 @@ You are given a two-dimensional list of integers `intervals` where each element 
 
 **Input**
 
-- intervals = `[[1, 3], [4, 10], [7, 12]]`
+- intervals =
+
+```
+[[ 1, 3],
+ [ 4,10],
+ [ 7,12]]
+```
 
 **Output**
 
@@ -44,7 +57,12 @@ No interval completely contains another.
 
 **Input**
 
-- intervals = `[[1, 5], [1, 5]]`
+- intervals =
+
+```
+[[1,5],
+ [1,5]]
+```
 
 **Output**
 

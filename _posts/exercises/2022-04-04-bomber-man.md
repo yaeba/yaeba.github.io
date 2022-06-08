@@ -17,7 +17,13 @@ You are given a two-dimensional integer `matrix` of `1`s and `0`s, where a `1` r
 
 **Input**
 
-- matrix = `[[1, 0, 0], [0, 1, 0], [0, 0, 0]]`
+- matrix =
+
+```
+[[1,0,0],
+ [0,1,0],
+ [0,0,0]]
+```
 
 **Output**
 

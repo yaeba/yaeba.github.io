@@ -19,7 +19,13 @@ You are given a two-dimensional list of integers `matrix` containing `1`s and `0
 
 **Input**
 
-- matrix = `[[0, 0, 1], [1, 0, 0], [0, 1, 0]]`
+- matrix =
+
+```
+[[0,0,1],
+ [1,0,0],
+ [0,1,0]]
+```
 
 **Output**
 
@@ -33,7 +39,13 @@ We have `matrix[0][2]`, `matrix[1][0]` and `matrix[2][1]` meet the criteria.
 
 **Input**
 
-- matrix = `[[0, 0, 1], [1, 0, 0], [1, 0, 0]]`
+- matrix =
+
+```
+[[0,0,1],
+ [1,0,0],
+ [1,0,0]]
+```
 
 **Output**
 

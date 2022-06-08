@@ -17,7 +17,15 @@ You are given a two-dimensional list of integers `intervals` where each list rep
 
 **Input**
 
-- intervals = `[[1, 5], [3, 8], [4, 5], [10, 13], [15, 17]]`
+- intervals =
+
+```
+[[ 1, 5],
+ [ 3, 8],
+ [ 4, 5],
+ [10,13],
+ [15,17]]
+```
 
 **Output**
 

@@ -19,7 +19,13 @@ You can assume that the intersection will be non-empty.
 
 **Input**
 
-- intervals = `[[1, 100], [10, 50], [15, 65]]`
+- intervals =
+
+```
+[[  1,100],
+ [ 10, 50],
+ [ 15, 65]]
+```
 
 **Output**
 

@@ -18,7 +18,14 @@ Return the number of land cells from which we cannot go off the matrix.
 
 **Input**
 
-- matrix = `[[0, 0, 0, 1], [0, 1, 1, 0], [0, 1, 1, 0], [0, 0, 0, 0]]`
+- matrix =
+
+```
+[[0,0,0,1],
+ [0,1,1,0],
+ [0,1,1,0],
+ [0,0,0,0]]
+```
 
 **Output**
 

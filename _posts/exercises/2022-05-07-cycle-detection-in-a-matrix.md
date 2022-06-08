@@ -16,7 +16,13 @@ You are given a two-dimensional list of integers `matrix`. Return whether you ca
 
 **Input**
 
-- matrix = `[[2, 1, 1, 1], [2, 1, 0, 1], [2, 1, 1, 1]]`
+- matrix =
+
+```
+[[2,1,1,1],
+ [2,1,0,1],
+ [2,1,1,1]]
+```
 
 **Output**
 
@@ -30,7 +36,13 @@ We can follow the `1`s to form a cycle.
 
 **Input**
 
-- matrix = `[[2, 1, 1, 1], [2, 1, 0, 3], [2, 1, 1, 1]]`
+- matrix =
+
+```
+[[2,1,1,1],
+ [2,1,0,3],
+ [2,1,1,1]]
+```
 
 **Output**
 

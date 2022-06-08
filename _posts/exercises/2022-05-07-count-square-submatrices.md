@@ -17,7 +17,12 @@ Given a two-dimensional list of integers `matrix` containing `1`s and `0`s, retu
 
 **Input**
 
-- matrix = `[[1, 1, 0], [1, 1, 0]]`
+- matrix =
+
+```
+[[1,1,0],
+ [1,1,0]]
+```
 
 **Output**
 

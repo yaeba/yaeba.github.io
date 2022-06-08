@@ -17,7 +17,14 @@ Given a two-dimensional matrix of integers `matrix`, determine whether it's a To
 
 **Input**
 
-- matrix = `[[0, 1, 2], [3, 0, 1], [4, 3, 0], [5, 4, 3]]`
+- matrix =
+
+```
+[[0,1,2],
+ [3,0,1],
+ [4,3,0],
+ [5,4,3]]
+```
 
 **Output**
 
@@ -27,7 +34,13 @@ Given a two-dimensional matrix of integers `matrix`, determine whether it's a To
 
 **Input**
 
-- matrix = `[[1, 0, 0], [0, 0, 0], [0, 0, 1]]`
+- matrix =
+
+```
+[[1,0,0],
+ [0,0,0],
+ [0,0,1]]
+```
 
 **Output**
 

@@ -23,7 +23,16 @@ Return a new list of lists such that the numbers in `fractions` are:
 
 **Input**
 
-- fractions = `[[8, 4], [2, 1], [7, 3], [14, 6], [10, 2], [-3, 6]]`
+- fractions =
+
+```
+[[ 8, 4],
+ [ 2, 1],
+ [ 7, 3],
+ [14, 6],
+ [10, 2],
+ [-3, 6]]
+```
 
 **Output**
 

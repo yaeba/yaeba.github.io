@@ -17,7 +17,15 @@ Given a two-dimensional matrix of integers, for each zero in the original matrix
 
 **Input**
 
-- matrix = `[[5, 0, 0, 5, 8], [9, 8, 10, 3, 9], [0, 7, 2, 3, 1], [8, 0, 6, 7, 2], [4, 1, 8, 5, 10]]`
+- matrix =
+
+```
+[[ 5, 0, 0, 5, 8],
+ [ 9, 8,10, 3, 9],
+ [ 0, 7, 2, 3, 1],
+ [ 8, 0, 6, 7, 2],
+ [ 4, 1, 8, 5,10]]
+```
 
 **Output**
 

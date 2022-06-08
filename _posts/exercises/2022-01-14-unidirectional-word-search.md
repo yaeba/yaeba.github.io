@@ -18,7 +18,13 @@ Given a two-dimensional matrix of characters `board` and a string `target`, retu
 
 **Input**
 
-- board = `[['H', 'E', 'L', 'L', 'O'], ['A', 'B', 'C', 'D', 'E']]`
+- board =
+
+```
+[['H','E','L','L','O'],
+ ['A','B','C','D','E']]
+```
+
 - word = `HELLO`
 
 **Output**
@@ -29,7 +35,14 @@ Given a two-dimensional matrix of characters `board` and a string `target`, retu
 
 **Input**
 
-- board = `[['x', 'z', 'd', 'x'], ['p', 'g', 'u', 'x'], ['k', 'j', 'z', 'd']]`
+- board =
+
+```
+[['x','z','d','x'],
+ ['p','g','u','x'],
+ ['k','j','z','d']]
+```
+
 - word = `xgz`
 
 **Output**

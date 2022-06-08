@@ -17,7 +17,13 @@ Given a two-dimensional list of integers `matrix`, find the largest `k × k` sub
 
 **Input**
 
-- matrix = `[[1, 1, 3], [1, 1, 3], [5, 5, 5]]`
+- matrix =
+
+```
+[[1,1,3],
+ [1,1,3],
+ [5,5,5]]
+```
 
 **Output**
 

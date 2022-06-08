@@ -17,7 +17,13 @@ Given an `n` by `n` matrix of letters `matrix`, return whether there are exactly
 
 **Input**
 
-- matrix = `[['a', 'b', 'c'], ['c', 'a', 'b'], ['b', 'c', 'a']]`
+- matrix =
+
+```
+[['a','b','c'],
+ ['c','a','b'],
+ ['b','c','a']]
+```
 
 **Output**
 
@@ -31,7 +37,13 @@ There are 3 different letters and each letter appears exactly once in each row a
 
 **Input**
 
-- matrix = `[['a', 'b', 'c'], ['d', 'a', 'a'], ['b', 'b', 'a']]`
+- matrix =
+
+```
+[['a','b','c'],
+ ['d','a','a'],
+ ['b','b','a']]
+```
 
 **Output**
 

@@ -19,7 +19,14 @@ Return the most frequently occurring number in the intervals. If there are ties,
 
 **Input**
 
-- intervals = `[[1, 4], [3, 5], [6, 9], [7, 9]]`
+- intervals =
+
+```
+[[1,4],
+ [3,5],
+ [6,9],
+ [7,9]]
+```
 
 **Output**
 

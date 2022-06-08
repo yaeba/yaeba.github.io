@@ -20,7 +20,12 @@ You are given a list of integers `nums` and a two-dimensional list of integers `
 **Input**
 
 - nums = `[1, 3, 4, 2]`
-- queries = `[[0, 1], [1, 3]]`
+- queries =
+
+```
+[[0,1],
+ [1,3]]
+```
 
 **Output**
 

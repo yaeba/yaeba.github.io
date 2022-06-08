@@ -19,7 +19,14 @@ Return the total unique duration it covers.
 
 **Input**
 
-- intervals = `[[45, 60], [1, 5], [5, 15], [2, 3]]`
+- intervals =
+
+```
+[[45,60],
+ [ 1, 5],
+ [ 5,15],
+ [ 2, 3]]
+```
 
 **Output**
 

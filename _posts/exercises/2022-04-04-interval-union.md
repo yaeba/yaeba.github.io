@@ -17,7 +17,12 @@ Given a two-dimensional integer list `intervals` representing unsorted inclusive
 
 **Input**
 
-- intervals = `[[0, 5], [4, 6]]`
+- intervals =
+
+```
+[[0,5],
+ [4,6]]
+```
 
 **Output**
 
@@ -27,7 +32,12 @@ Given a two-dimensional integer list `intervals` representing unsorted inclusive
 
 **Input**
 
-- intervals = `[[5, 6], [1, 2]]`
+- intervals =
+
+```
+[[5,6],
+ [1,2]]
+```
 
 **Output**
 
@@ -37,7 +47,12 @@ Given a two-dimensional integer list `intervals` representing unsorted inclusive
 
 **Input**
 
-- intervals = `[[1, 2], [3, 4]]`
+- intervals =
+
+```
+[[1,2],
+ [3,4]]
+```
 
 **Output**
 

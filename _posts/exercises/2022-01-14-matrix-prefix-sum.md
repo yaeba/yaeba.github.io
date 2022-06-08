@@ -18,7 +18,12 @@ Given a two-dimensional integer `matrix`, return a new matrix `A` of the same di
 
 **Input**
 
-- matrix = `[[2, 3], [5, 7]]`
+- matrix =
+
+```
+[[2,3],
+ [5,7]]
+```
 
 **Output**
 

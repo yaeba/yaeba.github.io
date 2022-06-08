@@ -19,7 +19,12 @@ Note: Neighbors can only be directly horizontal or vertical, not diagonal.
 
 **Input**
 
-- matrix = `[[1, 1], [1, 0]]`
+- matrix =
+
+```
+[[1,1],
+ [1,0]]
+```
 
 **Output**
 
@@ -29,7 +34,12 @@ Note: Neighbors can only be directly horizontal or vertical, not diagonal.
 
 **Input**
 
-- matrix = `[[0, 1], [1, 0]]`
+- matrix =
+
+```
+[[0,1],
+ [1,0]]
+```
 
 **Output**
 
@@ -39,7 +49,16 @@ Note: Neighbors can only be directly horizontal or vertical, not diagonal.
 
 **Input**
 
-- matrix = `[[1, 0, 0, 0, 0], [0, 0, 1, 1, 0], [0, 1, 1, 0, 0], [0, 0, 0, 0, 0], [1, 1, 0, 0, 1], [1, 1, 0, 0, 1]]`
+- matrix =
+
+```
+[[1,0,0,0,0],
+ [0,0,1,1,0],
+ [0,1,1,0,0],
+ [0,0,0,0,0],
+ [1,1,0,0,1],
+ [1,1,0,0,1]]
+```
 
 **Output**
 

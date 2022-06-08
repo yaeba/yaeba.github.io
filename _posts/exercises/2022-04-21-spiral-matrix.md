@@ -17,7 +17,16 @@ Given a 2-d array `matrix`, return elements in spiral order starting from `matri
 
 **Input**
 
-- matrix = `[[6, 9, 8], [1, 8, 0], [5, 1, 2], [8, 0, 3], [1, 6, 4], [8, 8, 10]]`
+- matrix =
+
+```
+[[ 6, 9, 8],
+ [ 1, 8, 0],
+ [ 5, 1, 2],
+ [ 8, 0, 3],
+ [ 1, 6, 4],
+ [ 8, 8,10]]
+```
 
 **Output**
 

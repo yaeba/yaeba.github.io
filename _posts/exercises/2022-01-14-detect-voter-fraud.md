@@ -17,7 +17,15 @@ Given a two dimensional list of integers `votes`, where each list has two elemen
 
 **Input**
 
-- votes = `[[3, 1], [3, 0], [3, 4], [3, 3], [3, 2]]`
+- votes =
+
+```
+[[3,1],
+ [3,0],
+ [3,4],
+ [3,3],
+ [3,2]]
+```
 
 **Output**
 
@@ -31,7 +39,15 @@ Every voter has voted once.
 
 **Input**
 
-- votes = `[[2, 3], [2, 2], [2, 1], [2, 0], [2, 1]]`
+- votes =
+
+```
+[[2,3],
+ [2,2],
+ [2,1],
+ [2,0],
+ [2,1]]
+```
 
 **Output**
 

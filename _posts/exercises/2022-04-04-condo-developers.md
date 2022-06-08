@@ -21,7 +21,13 @@ Return a new matrix where each condominium's height is increased to the maximum 
 
 **Input**
 
-- matrix = `[[1, 2, 3], [4, 5, 6], [7, 8, 9]]`
+- matrix =
+
+```
+[[1,2,3],
+ [4,5,6],
+ [7,8,9]]
+```
 
 **Output**
 
@@ -35,7 +41,13 @@ The west-east skyline is `[3, 6, 9]` and north-south skyline is `[7, 8, 9]`. We 
 
 **Input**
 
-- matrix = `[[4, 4, 3], [5, 5, 3], [7, 8, 3]]`
+- matrix =
+
+```
+[[4,4,3],
+ [5,5,3],
+ [7,8,3]]
+```
 
 **Output**
 

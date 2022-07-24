@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://yaeba.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://yaeba.github.io/" rel="alternate" type="text/html" /><updated>2022-07-24T03:14:29+00:00</updated><id>https://yaeba.github.io/feed.xml</id><title type="html">Xtaycation</title><subtitle>My personal blog. I write about software development, coding exercises, cool tips and tricks and notes for learning &amp; development purposes.</subtitle><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><entry><title type="html">Edit Distance</title><link href="https://yaeba.github.io/exercises/edit-distance/" rel="alternate" type="text/html" title="Edit Distance" /><published>2022-07-24T00:00:00+00:00</published><updated>2022-07-24T00:00:00+00:00</updated><id>https://yaeba.github.io/exercises/edit-distance</id><content type="html" xml:base="https://yaeba.github.io/exercises/edit-distance/"><![CDATA[<p>Given two strings <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code>, find the minimum edit distance between the two. One edit distance is defined as</p>
+
+<ul>
+  <li>Deleting a character or</li>
+  <li>Inserting a character or</li>
+  <li>Replacing a character</li>
+</ul>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n ≤ 1,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">a</code></li>
+  <li><code class="language-plaintext highlighter-rouge">m ≤ 1,000</code> where <code class="language-plaintext highlighter-rouge">m</code> is the length of <code class="language-plaintext highlighter-rouge">b</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Edit-Distance" target="\_blank">https://binarysearch.com/problems/Edit-Distance</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>a = <code class="language-plaintext highlighter-rouge">zhello</code></li>
+  <li>b = <code class="language-plaintext highlighter-rouge">helli</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">2</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>“z” is removed and the “o” is replaced with “i”</p>
+
+<h3 id="example-2">Example 2</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>a = <code class="language-plaintext highlighter-rouge">dycare</code></li>
+  <li>b = <code class="language-plaintext highlighter-rouge">daycare</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">1</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>“a” is inserted into the first string to get “daycare”.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Edit-Distance.cpp"></script>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Edit-Distance.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="string" /><category term="dynamic programming" /><summary type="html"><![CDATA[Given two strings a and b, find the minimum edit distance between the two. One edit distance is defined as]]></summary></entry><entry><title type="html">Odd Palindrome</title><link href="https://yaeba.github.io/exercises/odd-palindrome/" rel="alternate" type="text/html" title="Odd Palindrome" /><published>2022-07-23T00:00:00+00:00</published><updated>2022-07-23T00:00:00+00:00</updated><id>https://yaeba.github.io/exercises/odd-palindrome</id><content type="html" xml:base="https://yaeba.github.io/exercises/odd-palindrome/"><![CDATA[<p>Given a string <code class="language-plaintext highlighter-rouge">s</code>, return whether all its palindromic substrings have odd lengths.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">s</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Odd-Palindrome" target="\_blank">https://binarysearch.com/problems/Odd-Palindrome</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>s = <code class="language-plaintext highlighter-rouge">aa</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">False</code></li>
+</ul>
+
+<h3 id="example-2">Example 2</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>s = <code class="language-plaintext highlighter-rouge">bab</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">True</code></li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Odd-Palindrome.cpp"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="string" /><summary type="html"><![CDATA[Given a string s, return whether all its palindromic substrings have odd lengths.]]></summary></entry><entry><title type="html">Maximum Absolute Value of Sublist</title><link href="https://yaeba.github.io/exercises/maximum-absolute-value-of-sublist/" rel="alternate" type="text/html" title="Maximum Absolute Value of Sublist" /><published>2022-07-22T00:00:00+00:00</published><updated>2022-07-22T00:00:00+00:00</updated><id>https://yaeba.github.io/exercises/maximum-absolute-value-of-sublist</id><content type="html" xml:base="https://yaeba.github.io/exercises/maximum-absolute-value-of-sublist/"><![CDATA[<p>You are given a list of integers <code class="language-plaintext highlighter-rouge">nums</code>. Return the maximum possible <code class="language-plaintext highlighter-rouge">abs(nums[i] + nums[i + 1] + ... + nums[j])</code> for any <code class="language-plaintext highlighter-rouge">i &lt;= j</code>.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">0 ≤ n ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">nums</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Maximum-Absolute-Value-of-Sublist" target="\_blank">https://binarysearch.com/problems/Maximum-Absolute-Value-of-Sublist</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[5, -7, -2, 4]</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">9</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>We can take the sublist <code class="language-plaintext highlighter-rouge">[-7, -2]</code> to get <code class="language-plaintext highlighter-rouge">abs(-7 + -2) = 9</code>.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Maximum-Absolute-Value-of-Sublist.cpp"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="greedy" /><summary type="html"><![CDATA[You are given a list of integers nums. Return the maximum possible abs(nums[i] + nums[i + 1] + ... + nums[j]) for any i &lt;= j.]]></summary></entry><entry><title type="html">Unique String Frequencies</title><link href="https://yaeba.github.io/exercises/unique-string-frequencies/" rel="alternate" type="text/html" title="Unique String Frequencies" /><published>2022-07-20T00:00:00+00:00</published><updated>2022-07-20T00:00:00+00:00</updated><id>https://yaeba.github.io/exercises/unique-string-frequencies</id><content type="html" xml:base="https://yaeba.github.io/exercises/unique-string-frequencies/"><![CDATA[<p>Given a lowercase alphabet string <code class="language-plaintext highlighter-rouge">s</code>, return the minimum number of characters that we need to delete such that the frequency of each character occurs a unique number of times.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">s</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Unique-String-Frequencies" target="\_blank">https://binarysearch.com/problems/Unique-String-Frequencies</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>s = <code class="language-plaintext highlighter-rouge">aabb</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">1</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>Both <code class="language-plaintext highlighter-rouge">"a"</code> and <code class="language-plaintext highlighter-rouge">"b"</code> occur twice, so we can remove say <code class="language-plaintext highlighter-rouge">"a"</code> once to make the frequencies unique.</p>
+
+<h3 id="example-2">Example 2</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>s = <code class="language-plaintext highlighter-rouge">abbccc</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">0</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>The string already has unique frequencies for <code class="language-plaintext highlighter-rouge">"a"</code>, <code class="language-plaintext highlighter-rouge">"b"</code> and <code class="language-plaintext highlighter-rouge">"c"</code>: <code class="language-plaintext highlighter-rouge">[1, 2, 3]</code>.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Unique-String-Frequencies.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="greedy" /><category term="string" /><summary type="html"><![CDATA[Given a lowercase alphabet string s, return the minimum number of characters that we need to delete such that the frequency of each character occurs a unique number of times.]]></summary></entry><entry><title type="html">Log Truncation</title><link href="https://yaeba.github.io/exercises/log-truncation/" rel="alternate" type="text/html" title="Log Truncation" /><published>2022-07-19T00:00:00+00:00</published><updated>2022-07-19T00:00:00+00:00</updated><id>https://yaeba.github.io/exercises/log-truncation</id><content type="html" xml:base="https://yaeba.github.io/exercises/log-truncation/"><![CDATA[<p>You are given a list of integers <code class="language-plaintext highlighter-rouge">logs</code> and an integer <code class="language-plaintext highlighter-rouge">limit</code>. Each element in <code class="language-plaintext highlighter-rouge">logs[i]</code> represents the size of logs generated by user <code class="language-plaintext highlighter-rouge">i</code>. <code class="language-plaintext highlighter-rouge">limit</code> represents the total size of logs you can store in your system.</p>
+
+<p>Return the largest <code class="language-plaintext highlighter-rouge">x</code> such that if we truncate every log in <code class="language-plaintext highlighter-rouge">logs</code> to be at most size <code class="language-plaintext highlighter-rouge">x</code>, the sum of the remaining log sizes is at most <code class="language-plaintext highlighter-rouge">limit</code>. If no log needs to be truncated, return the largest log size.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">1 ≤ n ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">logs</code></li>
+  <li><code class="language-plaintext highlighter-rouge">1 ≤ limit &lt; 2 ** 31</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Log-Truncation" target="\_blank">https://binarysearch.com/problems/Log-Truncation</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>logs = <code class="language-plaintext highlighter-rouge">[50, 20, 1000, 50, 400]</code></li>
+  <li>limit = <code class="language-plaintext highlighter-rouge">300</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">90</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>If we truncate logs to <code class="language-plaintext highlighter-rouge">90</code>, then we get <code class="language-plaintext highlighter-rouge">[50, 20, 90, 50, 90]</code> and its sum is <code class="language-plaintext highlighter-rouge">300</code></p>
+
+<h3 id="example-2">Example 2</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>logs = <code class="language-plaintext highlighter-rouge">[2, 3, 7]</code></li>
+  <li>limit = <code class="language-plaintext highlighter-rouge">100</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">7</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>No message needs to be truncated, so we return the max log size.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Log-Truncation.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><summary type="html"><![CDATA[You are given a list of integers logs and an integer limit. Each element in logs[i] represents the size of logs generated by user i. limit represents the total size of logs you can store in your system.]]></summary></entry><entry><title type="html">Labyrinthian Possibilities</title><link href="https://yaeba.github.io/exercises/labyrinthian-possibilities/" rel="alternate" type="text/html" title="Labyrinthian Possibilities" /><published>2022-07-18T00:00:00+00:00</published><updated>2022-07-18T00:00:00+00:00</updated><id>https://yaeba.github.io/exercises/labyrinthian-possibilities</id><content type="html" xml:base="https://yaeba.github.io/exercises/labyrinthian-possibilities/"><![CDATA[<p>You are given an N by M matrix of <code class="language-plaintext highlighter-rouge">0</code>s and <code class="language-plaintext highlighter-rouge">1</code>s. Starting from the top left corner, how many ways are there to reach the bottom right corner? Mod the result by <code class="language-plaintext highlighter-rouge">10 ** 9 + 7</code>.</p>
+
+<p>You can only move right and down. <code class="language-plaintext highlighter-rouge">0</code> represents an empty space while <code class="language-plaintext highlighter-rouge">1</code> represents a wall you cannot walk through. The top left corner and bottom right corner will always be <code class="language-plaintext highlighter-rouge">0</code>.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">1 ≤ n, m ≤ 250</code> where <code class="language-plaintext highlighter-rouge">n</code> and <code class="language-plaintext highlighter-rouge">m</code> are the number of rows and columns in <code class="language-plaintext highlighter-rouge">matrix</code>.</li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Labyrinthian-Possibilities" target="\_blank">https://binarysearch.com/problems/Labyrinthian-Possibilities</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>matrix =</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[0,0,1],
+ [0,0,1],
+ [1,0,0]]
+</code></pre></div></div>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">2</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>There are two ways to get to the bottom right:</p>
+
+<ul>
+  <li>Right, down, down, right</li>
+  <li>Down, right, down, right</li>
+</ul>
+
+<h3 id="example-2">Example 2</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>matrix =</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[0,0,0],
+ [0,0,0],
+ [0,0,0]]
+</code></pre></div></div>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">6</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>There are 6 ways here:</p>
+
+<ul>
+  <li>Right, right, down, down</li>
+  <li>Down, down, right, right</li>
+  <li>Right, down, right, down</li>
+  <li>Down, right, down, right</li>
+  <li>Right, down, down, right</li>
+  <li>Down, right, right, down</li>
+</ul>
+
+<h3 id="example-3">Example 3</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>matrix =</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[0,0,0],
+ [1,1,1],
+ [0,0,0]]
+</code></pre></div></div>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">0</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>There is a wall in the middle preventing us from getting to the bottom right.</p>
+
+<h3 id="example-4">Example 4</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>matrix =</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[0,0,0,0],
+ [1,1,1,0],
+ [0,0,0,0]]
+</code></pre></div></div>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">1</code></li>
+</ul>
+
+<h3 id="example-5">Example 5</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>matrix =</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[0,0,0,0,0],
+ [1,1,1,0,0],
+ [0,0,0,0,0]]
+</code></pre></div></div>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">3</code></li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Labyrinthian-Possibilities.cpp"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="dynamic programming" /><summary type="html"><![CDATA[You are given an N by M matrix of 0s and 1s. Starting from the top left corner, how many ways are there to reach the bottom right corner? Mod the result by 10 ** 9 + 7.]]></summary></entry><entry><title type="html">List Partitioning with Inequality Relation</title><link href="https://yaeba.github.io/exercises/list-partitioning-with-inequality-relation/" rel="alternate" type="text/html" title="List Partitioning with Inequality Relation" /><published>2022-07-17T00:00:00+00:00</published><updated>2022-07-17T00:00:00+00:00</updated><id>https://yaeba.github.io/exercises/list-partitioning-with-inequality-relation</id><content type="html" xml:base="https://yaeba.github.io/exercises/list-partitioning-with-inequality-relation/"><![CDATA[<p>Given a list of integers <code class="language-plaintext highlighter-rouge">nums</code>, we want to split the list into two non-empty sublists <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code> such that every element in <code class="language-plaintext highlighter-rouge">a</code> is less than or equal to every element in <code class="language-plaintext highlighter-rouge">b</code>.</p>
+
+<p>Return the smallest length of <code class="language-plaintext highlighter-rouge">a</code> that is possible. You can assume that the solution exists.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">nums</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/List-Partitioning-with-Inequality-Relation" target="\_blank">https://binarysearch.com/problems/List-Partitioning-with-Inequality-Relation</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[2, 0, 1, 4, 3]</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">3</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>We can split the list into <code class="language-plaintext highlighter-rouge">a = [2, 0, 1]</code> and <code class="language-plaintext highlighter-rouge">b = [4, 3]</code>.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=List-Partitioning-with-Inequality-Relation.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="array" /><summary type="html"><![CDATA[Given a list of integers nums, we want to split the list into two non-empty sublists a and b such that every element in a is less than or equal to every element in b.]]></summary></entry><entry><title type="html">Maximum Unique Sublist Sum</title><link href="https://yaeba.github.io/exercises/maximum-unique-sublist-sum/" rel="alternate" type="text/html" title="Maximum Unique Sublist Sum" /><published>2022-07-14T00:00:00+00:00</published><updated>2022-07-14T00:00:00+00:00</updated><id>https://yaeba.github.io/exercises/maximum-unique-sublist-sum</id><content type="html" xml:base="https://yaeba.github.io/exercises/maximum-unique-sublist-sum/"><![CDATA[<p>You are given a list of non-negative integers <code class="language-plaintext highlighter-rouge">nums</code>. Return the maximum sum of a sublist in <code class="language-plaintext highlighter-rouge">nums</code> containing only unique values.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">1 ≤ n ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">nums</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Maximum-Unique-Sublist-Sum" target="\_blank">https://binarysearch.com/problems/Maximum-Unique-Sublist-Sum</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[1, 2, 2, 3, 4, 4]</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">9</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>We can take the sublist <code class="language-plaintext highlighter-rouge">[2, 3, 4]</code> which has unique numbers.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Maximum-Unique-Sublist-Sum.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="two pointers" /><category term="array" /><summary type="html"><![CDATA[You are given a list of non-negative integers nums. Return the maximum sum of a sublist in nums containing only unique values.]]></summary></entry><entry><title type="html">Next Integer Permutation</title><link href="https://yaeba.github.io/exercises/next-integer-permutation/" rel="alternate" type="text/html" title="Next Integer Permutation" /><published>2022-07-11T00:00:00+00:00</published><updated>2022-07-11T00:00:00+00:00</updated><id>https://yaeba.github.io/exercises/next-integer-permutation</id><content type="html" xml:base="https://yaeba.github.io/exercises/next-integer-permutation/"><![CDATA[<p>Given an integer <code class="language-plaintext highlighter-rouge">n</code>, return the next bigger permutation of its digits.</p>
+
+<p>If <code class="language-plaintext highlighter-rouge">n</code> is already in its biggest permutation, rotate to the smallest permutation.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n &lt; 2 ** 31</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Next-Integer-Permutation" target="\_blank">https://binarysearch.com/problems/Next-Integer-Permutation</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>n = <code class="language-plaintext highlighter-rouge">321</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">123</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>321 is already the biggest permutation so it rotates to the smallest.</p>
+
+<h3 id="example-2">Example 2</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>n = <code class="language-plaintext highlighter-rouge">527</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">572</code></li>
+</ul>
+
+<h3 id="example-3">Example 3</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>n = <code class="language-plaintext highlighter-rouge">20</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">2</code></li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Next-Integer-Permutation.cpp"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="array" /><summary type="html"><![CDATA[Given an integer n, return the next bigger permutation of its digits.]]></summary></entry><entry><title type="html">Sinking Islands</title><link href="https://yaeba.github.io/exercises/sinking-islands/" rel="alternate" type="text/html" title="Sinking Islands" /><published>2022-07-10T00:00:00+00:00</published><updated>2022-07-10T00:00:00+00:00</updated><id>https://yaeba.github.io/exercises/sinking-islands</id><content type="html" xml:base="https://yaeba.github.io/exercises/sinking-islands/"><![CDATA[<p>Given an 2D <code class="language-plaintext highlighter-rouge">matrix</code> of <code class="language-plaintext highlighter-rouge">0</code>s and <code class="language-plaintext highlighter-rouge">1</code>s, a <code class="language-plaintext highlighter-rouge">1</code> represents land and <code class="language-plaintext highlighter-rouge">0</code> represents water. An island is a group of <code class="language-plaintext highlighter-rouge">1</code>’s that are surrounded by <code class="language-plaintext highlighter-rouge">0</code>s or by the border. Find all the islands that are completely surrounded by water and modify them into <code class="language-plaintext highlighter-rouge">0</code>s.</p>
+
+<p>An island is completed surrounded by water if all of the neighbours are water (that is, none of the neighbours are borders).</p>
+
+<p>Note: Neighbours can only be directly horizontal or vertical, not diagonal.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n, m ≤ 250</code> where <code class="language-plaintext highlighter-rouge">n</code> and <code class="language-plaintext highlighter-rouge">m</code> are the number of rows and columns in <code class="language-plaintext highlighter-rouge">matrix</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Sinking-Islands" target="\_blank">https://binarysearch.com/problems/Sinking-Islands</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>board =</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[1,1],
+ [1,0]]
+</code></pre></div></div>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">[[1, 1], [1, 0]]</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>The island is not submerged since it touches some of the borders.</p>
+
+<h3 id="example-2">Example 2</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>board =</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[1,0,0,0],
+ [0,1,1,0],
+ [0,0,0,0]]
+</code></pre></div></div>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">[[1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>The island in the middle <code class="language-plaintext highlighter-rouge">[(1, 1), (1, 2)]</code> is completely submerged.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Sinking-Islands.cpp"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="graph" /><summary type="html"><![CDATA[Given an 2D matrix of 0s and 1s, a 1 represents land and 0 represents water. An island is a group of 1’s that are surrounded by 0s or by the border. Find all the islands that are completely surrounded by water and modify them into 0s.]]></summary></entry></feed>

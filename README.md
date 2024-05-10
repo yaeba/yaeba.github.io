@@ -2,7 +2,7 @@
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/yaeba/yaeba.github.io/)
 
-View it at https://yaeba.github.io/
+View it at https://xuankentay.com/
 
 ## Build and Run Locally
 

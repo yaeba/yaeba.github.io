@@ -12,12 +12,14 @@ header:
 ## Useful links
 
 - [https://kubernetes.io/docs/concepts/workloads/controllers/&#8203;deployment/](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/){:target="\_blank"}
-- [Kubernetes: Pods](../kubernetes-pods/){:target="\_blank"}
-- [Kubernetes: ReplicaSets](../kubernetes-replicasets/){:target="\_blank"}
+- Also check out my previous posts on:
+  - [Kubernetes: Pods](../kubernetes-pods/){:target="\_blank"}
+  - [Kubernetes: ReplicaSets](../kubernetes-replicasets/){:target="\_blank"}
 
 ## Concepts
 
-- **Deployments** manage the deployment and scaling of a set of Pods and provide declarative updates to applications.
+**Deployments** manage the deployment and scaling of a set of Pods and provide declarative updates to applications.
+
 - A Deployment is described as **a set of identical Pods** with no unique identities. A Deployment runs multiple replicas of your application and automatically replaces any instances that fail or become unresponsive.
 - In essence, Deployments are **higher-level concepts** that manage ReplicaSets and provide additional features like **rolling updates and rollbacks**.
 - As such, it's recommended to use Deployment instead of directly managing ReplicaSets because it provides additional useful features.

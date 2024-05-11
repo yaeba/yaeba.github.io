@@ -13,10 +13,12 @@ header:
 
 - [https://kubernetes.io/docs/concepts/workloads/controllers/&#8203;replicationcontroller](https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller){:target="\_blank"}
 - [https://kubernetes.io/docs/concepts/workloads/controllers/&#8203;replicaset/](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/){:target="\_blank"}
+- Also check out my previous post on [Kubernetes: Pods](../kubernetes-pods/){:target="\_blank"}
 
 ## Concepts
 
-- Both ReplicationController and ReplicaSet are to be used to ensure a **specified** number of pod replicas are up and running at any given time
+Both ReplicationController and ReplicaSet are to be used to ensure a **specified** number of pod replicas are up and running at any given time.
+
 - ReplicaSet is actually the **successor** of ReplicationController and they both serve identical purpose
 - Having said that, it's almost always recommended to use **Deployment** over managing ReplicationController/ReplicaSet, as the former provides a couple of more useful features on top
 - ReplicaSet requires us to define a **PodTemplate**, which it uses to create new pod(s) when needed

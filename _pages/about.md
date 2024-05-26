@@ -222,7 +222,7 @@ permalink: /about/
     </li>
     <li>
       <div class="content">
-        <h3>Promotion to Software Engineer</h3>
+        <h3>Promoted to Software Engineer</h3>
         <p>
           Increased responsibilities and autonomy at work. My work focused more
           heavily on infrastructure automation, containerisation, CI/CD, general
@@ -231,6 +231,23 @@ permalink: /about/
       </div>
       <div class="time">
         <h4>Aug 2021</h4>
+      </div>
+    </li>
+    <li>
+      <div class="content">
+        <h3>Started a new role at ScentreGroup as Cloud Platform Engineer</h3>
+        <p>
+          At Scentre Group, I have the opportunity to own and manage many of the company’s services and cloud infrastructure.
+        </p>
+        <p>
+          This allowed me to develop and demonstrate my expertise in GCP, Confluent, Kong, Buildkite, ArgoCD, Kubernetes, Grafana, and Github etc.
+        </p>
+        <p>
+          My role as SME in these components has allowed me to provide valuable insights and solutions, making me a trusted resource for cloud-related queries. I’ve also played a key role in cost optimisation, helping the company save significantly on monthly expenses.
+        </p>
+      </div>
+      <div class="time">
+        <h4>Apr 2022</h4>
       </div>
     </li>
     <div style="clear: both"></div>

@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://xuankentay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://xuankentay.com/" rel="alternate" type="text/html" /><updated>2024-05-26T08:05:52+00:00</updated><id>https://xuankentay.com/feed.xml</id><title type="html">Xuanken’s Space</title><subtitle>My personal blog. I write about software development, coding exercises, cool tips and tricks and notes for learning &amp; development purposes.</subtitle><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><entry><title type="html">Kubernetes: Deployments</title><link href="https://xuankentay.com/blog/kubernetes-deployments/" rel="alternate" type="text/html" title="Kubernetes: Deployments" /><published>2024-05-11T00:00:00+00:00</published><updated>2024-05-11T00:00:00+00:00</updated><id>https://xuankentay.com/blog/kubernetes-deployments</id><content type="html" xml:base="https://xuankentay.com/blog/kubernetes-deployments/"><![CDATA[<h2 id="useful-links">Useful links</h2>
+
+<ul>
+  <li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/" target="\_blank">https://kubernetes.io/docs/concepts/workloads/controllers/​deployment/</a></li>
+  <li>Also check out my previous posts on:
+    <ul>
+      <li><a href="../kubernetes-pods/" target="\_blank">Kubernetes: Pods</a></li>
+      <li><a href="../kubernetes-replicasets/" target="\_blank">Kubernetes: ReplicaSets</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="concepts">Concepts</h2>
+
+<p><strong>Deployments</strong> manage the deployment and scaling of a set of Pods and provide declarative updates to applications.</p>
+
+<ul>
+  <li>A Deployment is described as <strong>a set of identical Pods</strong> with no unique identities. A Deployment runs multiple replicas of your application and automatically replaces any instances that fail or become unresponsive.</li>
+  <li>In essence, Deployments are <strong>higher-level concepts</strong> that manage ReplicaSets and provide additional features like <strong>rolling updates and rollbacks</strong>.</li>
+  <li>As such, it’s recommended to use Deployment instead of directly managing ReplicaSets because it provides additional useful features.</li>
+  <li>Deployments manage <strong>stateless</strong> applications, while StatefulSets manage <strong>stateful</strong> applications</li>
+</ul>
+
+<h2 id="notes">Notes</h2>
+
+<h3 id="declarative-manifest">Declarative manifest</h3>
+
+<ul>
+  <li>Simple example of Deployment yaml definition, you will find this very similar to ReplicaSet
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Deployment</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">nginx-deployment</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">strategy</span><span class="pi">:</span> <span class="c1"># how to replace old pods with new ones</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">RollingUpdate</span> <span class="c1"># default strategy</span>
+    <span class="na">rollingUpdate</span><span class="pi">:</span>
+      <span class="na">maxUnavailable</span><span class="pi">:</span> <span class="m">1</span>
+      <span class="na">maxSurge</span><span class="pi">:</span> <span class="m">1</span>
+  <span class="na">replicas</span><span class="pi">:</span> <span class="m">3</span> <span class="c1"># number of replica pods</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">matchLabels</span><span class="pi">:</span>
+      <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span> <span class="c1"># selector</span>
+  <span class="na">template</span><span class="pi">:</span> <span class="c1"># pod template (just like what we would define in pod yaml)</span>
+    <span class="na">metadata</span><span class="pi">:</span>
+      <span class="na">labels</span><span class="pi">:</span>
+        <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span> <span class="c1"># label of pod</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">containers</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">nginx</span>
+        <span class="na">image</span><span class="pi">:</span> <span class="s">nginx:1.14.2</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="imperative-commands">Imperative commands</h3>
+
+<ul>
+  <li>Get deployment details<br />
+<code class="language-plaintext highlighter-rouge">k get deploy &lt;deployment-name&gt; -o wide</code></li>
+  <li>Update Deployment replicas<br />
+<code class="language-plaintext highlighter-rouge">k scale deployment &lt;deployment-name&gt; --replicas=&lt;num&gt;</code></li>
+  <li>Rollback to an earlier Deployment revision<br />
+<code class="language-plaintext highlighter-rouge">k rollout undo deploy &lt;deployment-name&gt;</code></li>
+  <li>View the rollout history of a Deployment<br />
+<code class="language-plaintext highlighter-rouge">k rollout history deploy &lt;deployment-name&gt;</code></li>
+  <li>Determine Deployment (owner) of a pod<br />
+<code class="language-plaintext highlighter-rouge">k get pods &lt;pod-name&gt; -o yaml | grep -A 5 owner</code></li>
+  <li>Delete Deployment and all its pods<br />
+<code class="language-plaintext highlighter-rouge">k delete deploy &lt;deployment-name&gt;</code></li>
+  <li>Delete Deployment only<br />
+<code class="language-plaintext highlighter-rouge">k delete deploy &lt;deployment-name&gt; --cascade=orphan</code></li>
+</ul>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="blog" /><category term="kubernetes" /><summary type="html"><![CDATA[Ensuring reliable and up-to-date application deployment]]></summary></entry><entry><title type="html">Anagram Substrings</title><link href="https://xuankentay.com/exercises/anagram-substrings/" rel="alternate" type="text/html" title="Anagram Substrings" /><published>2022-10-13T00:00:00+00:00</published><updated>2022-10-13T00:00:00+00:00</updated><id>https://xuankentay.com/exercises/anagram-substrings</id><content type="html" xml:base="https://xuankentay.com/exercises/anagram-substrings/"><![CDATA[<p>Given two strings <code class="language-plaintext highlighter-rouge">s0</code> and <code class="language-plaintext highlighter-rouge">s1</code>, return the number of substrings where <code class="language-plaintext highlighter-rouge">s1</code> contains any anagram of <code class="language-plaintext highlighter-rouge">s0</code>.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">s0</code></li>
+  <li><code class="language-plaintext highlighter-rouge">m ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">m</code> is the length of <code class="language-plaintext highlighter-rouge">s1</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Anagram-Substrings" target="\_blank">https://binarysearch.com/problems/Anagram-Substrings</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>s0 = <code class="language-plaintext highlighter-rouge">abc</code></li>
+  <li>s1 = <code class="language-plaintext highlighter-rouge">bcabxabc</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">3</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>The substrings <code class="language-plaintext highlighter-rouge">"bca"</code>, <code class="language-plaintext highlighter-rouge">"cab"</code> and <code class="language-plaintext highlighter-rouge">"abc"</code> of <code class="language-plaintext highlighter-rouge">s0</code> are permutations of <code class="language-plaintext highlighter-rouge">"abc"</code>.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Anagram-Substrings.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="hash table" /><category term="string" /><summary type="html"><![CDATA[Given two strings s0 and s1, return the number of substrings where s1 contains any anagram of s0.]]></summary></entry><entry><title type="html">Separate People Given Dislike Relations</title><link href="https://xuankentay.com/exercises/separate-people-given-dislike-relations/" rel="alternate" type="text/html" title="Separate People Given Dislike Relations" /><published>2022-10-12T00:00:00+00:00</published><updated>2022-10-12T00:00:00+00:00</updated><id>https://xuankentay.com/exercises/separate-people-given-dislike-relations</id><content type="html" xml:base="https://xuankentay.com/exercises/separate-people-given-dislike-relations/"><![CDATA[<p>You are given an integer <code class="language-plaintext highlighter-rouge">n</code> and a two-dimensional list of integers <code class="language-plaintext highlighter-rouge">enemies</code>. Integer <code class="language-plaintext highlighter-rouge">n</code> means there’s <code class="language-plaintext highlighter-rouge">n</code> people labeled from <code class="language-plaintext highlighter-rouge">[0, n - 1]</code>. Each element in <code class="language-plaintext highlighter-rouge">enemies</code> contains <code class="language-plaintext highlighter-rouge">[person_a, person_b]</code> which means that <code class="language-plaintext highlighter-rouge">person_a</code> and <code class="language-plaintext highlighter-rouge">person_b</code> are enemies.</p>
+
+<p>Return whether it’s possible to partition the <code class="language-plaintext highlighter-rouge">n</code> people into two groups such that no two people that are enemies are in the same group.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n ≤ 1,000</code></li>
+  <li><code class="language-plaintext highlighter-rouge">m ≤ 10,000</code> where <code class="language-plaintext highlighter-rouge">m</code> is the length of <code class="language-plaintext highlighter-rouge">enemies</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Separate-People-Given-Dislike-Relations" target="\_blank">https://binarysearch.com/problems/Separate-People-Given-Dislike-Relations</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>n = <code class="language-plaintext highlighter-rouge">4</code></li>
+  <li>enemies =</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[0,1],
+ [1,2]]
+</code></pre></div></div>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">True</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>We can have these two groups <code class="language-plaintext highlighter-rouge">[0, 2, 3]</code> and <code class="language-plaintext highlighter-rouge">[1]</code>.</p>
+
+<h3 id="example-2">Example 2</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>n = <code class="language-plaintext highlighter-rouge">3</code></li>
+  <li>enemies =</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[0,1],
+ [0,2],
+ [1,2]]
+</code></pre></div></div>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">False</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>No matter how we split the two groups, there will be two people that are enemies in a group.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Separate-People-Given-Dislike-Relations.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="graph" /><summary type="html"><![CDATA[You are given an integer n and a two-dimensional list of integers enemies. Integer n means there’s n people labeled from [0, n - 1]. Each element in enemies contains [person_a, person_b] which means that person_a and person_b are enemies.]]></summary></entry><entry><title type="html">Fractional Knapsack</title><link href="https://xuankentay.com/exercises/fractional-knapsack/" rel="alternate" type="text/html" title="Fractional Knapsack" /><published>2022-10-10T00:00:00+00:00</published><updated>2022-10-10T00:00:00+00:00</updated><id>https://xuankentay.com/exercises/fractional-knapsack</id><content type="html" xml:base="https://xuankentay.com/exercises/fractional-knapsack/"><![CDATA[<p>You are given two lists of integers <code class="language-plaintext highlighter-rouge">weights</code> and <code class="language-plaintext highlighter-rouge">values</code> which have the same length and an integer <code class="language-plaintext highlighter-rouge">capacity</code>. <code class="language-plaintext highlighter-rouge">weights[i]</code> and <code class="language-plaintext highlighter-rouge">values[i]</code> represent the weight and value of the <code class="language-plaintext highlighter-rouge">i</code>th item.</p>
+
+<p>Given that you can take at most <code class="language-plaintext highlighter-rouge">capacity</code> weights, and that you can take a fraction of an item’s weight with proportionate value, return the maximum amount of value you can get, rounded down to the nearest integer.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">weights</code> and <code class="language-plaintext highlighter-rouge">values</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Fractional-Knapsack" target="\_blank">https://binarysearch.com/problems/Fractional-Knapsack</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>weights = <code class="language-plaintext highlighter-rouge">[5, 6, 2]</code></li>
+  <li>values = <code class="language-plaintext highlighter-rouge">[100, 100, 1]</code></li>
+  <li>capacity = <code class="language-plaintext highlighter-rouge">8</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">150</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>The best we can do is:</p>
+
+<ul>
+  <li>Take the item with <code class="language-plaintext highlighter-rouge">5</code> weight and take the <code class="language-plaintext highlighter-rouge">100</code> value, leaving us with <code class="language-plaintext highlighter-rouge">3</code> capacity</li>
+  <li>Take half of the item with <code class="language-plaintext highlighter-rouge">6</code> weight and take half of the <code class="language-plaintext highlighter-rouge">100</code> value.</li>
+</ul>
+
+<h3 id="example-2">Example 2</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>weights = <code class="language-plaintext highlighter-rouge">[5, 6, 2]</code></li>
+  <li>values = <code class="language-plaintext highlighter-rouge">[100, 100, 1]</code></li>
+  <li>capacity = <code class="language-plaintext highlighter-rouge">13</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">201</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>We can take all <code class="language-plaintext highlighter-rouge">3</code> items in full</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Fractional-Knapsack.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="greedy" /><summary type="html"><![CDATA[You are given two lists of integers weights and values which have the same length and an integer capacity. weights[i] and values[i] represent the weight and value of the ith item.]]></summary></entry><entry><title type="html">Longest Arithmetic Subsequence with Difference Constraint</title><link href="https://xuankentay.com/exercises/longest-arithmetic-subsequence-with-difference-constraint/" rel="alternate" type="text/html" title="Longest Arithmetic Subsequence with Difference Constraint" /><published>2022-10-08T00:00:00+00:00</published><updated>2022-10-08T00:00:00+00:00</updated><id>https://xuankentay.com/exercises/longest-arithmetic-subsequence-with-difference-constraint</id><content type="html" xml:base="https://xuankentay.com/exercises/longest-arithmetic-subsequence-with-difference-constraint/"><![CDATA[<p>Given a list of integers <code class="language-plaintext highlighter-rouge">nums</code> and an integer <code class="language-plaintext highlighter-rouge">diff</code>, return the length of the longest arithmetic subsequence where the difference between each consecutive numbers in the subsequence is <code class="language-plaintext highlighter-rouge">diff</code>.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">0 ≤ n ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">nums</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Longest-Arithmetic-Subsequence-with-Difference-Constraint" target="\_blank">https://binarysearch.com/problems/Longest-Arithmetic-Subsequence-with-Difference-Constraint</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[-2, 0, 3, 6, 1, 9]</code></li>
+  <li>diff = <code class="language-plaintext highlighter-rouge">3</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">4</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>We can pick the subsequence <code class="language-plaintext highlighter-rouge">[0, 3, 6, 9]</code>.</p>
+
+<h3 id="example-2">Example 2</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[9, 8, 7, 5, 3]</code></li>
+  <li>diff = <code class="language-plaintext highlighter-rouge">-2</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">4</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>We can pick the subsequence <code class="language-plaintext highlighter-rouge">[9, 7, 5, 3]</code>.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Longest-Arithmetic-Subsequence-with-Difference-Constraint.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="math" /><category term="dynamic programming" /><summary type="html"><![CDATA[Given a list of integers nums and an integer diff, return the length of the longest arithmetic subsequence where the difference between each consecutive numbers in the subsequence is diff.]]></summary></entry><entry><title type="html">Maximum Sum Rectangle with Condition</title><link href="https://xuankentay.com/exercises/maximum-sum-rectangle-with-condition/" rel="alternate" type="text/html" title="Maximum Sum Rectangle with Condition" /><published>2022-10-07T00:00:00+00:00</published><updated>2022-10-07T00:00:00+00:00</updated><id>https://xuankentay.com/exercises/maximum-sum-rectangle-with-condition</id><content type="html" xml:base="https://xuankentay.com/exercises/maximum-sum-rectangle-with-condition/"><![CDATA[<p>Given a two-dimensional integer matrix <code class="language-plaintext highlighter-rouge">matrix</code> and an integer <code class="language-plaintext highlighter-rouge">k</code>, return the largest sum of a rectangle <code class="language-plaintext highlighter-rouge">≤ k</code>.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n, m ≤ 100</code> where <code class="language-plaintext highlighter-rouge">n</code> and <code class="language-plaintext highlighter-rouge">m</code> are the number of rows and columns in <code class="language-plaintext highlighter-rouge">matrix</code>.</li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Maximum-Sum-Rectangle-with-Condition" target="\_blank">https://binarysearch.com/problems/Maximum-Sum-Rectangle-with-Condition</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>matrix =</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[ 2,-2],
+ [ 3, 2]]
+</code></pre></div></div>
+
+<ul>
+  <li>k = <code class="language-plaintext highlighter-rouge">6</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">5</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>We can take the rectangle <code class="language-plaintext highlighter-rouge">[2, 3]</code> to get sum of <code class="language-plaintext highlighter-rouge">5</code>.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Maximum-Sum-Rectangle-with-Condition.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="queue" /><category term="prefix sum" /><summary type="html"><![CDATA[Given a two-dimensional integer matrix matrix and an integer k, return the largest sum of a rectangle ≤ k.]]></summary></entry><entry><title type="html">Create Largest Number From a List</title><link href="https://xuankentay.com/exercises/create-largest-number-from-a-list/" rel="alternate" type="text/html" title="Create Largest Number From a List" /><published>2022-10-04T00:00:00+00:00</published><updated>2022-10-04T00:00:00+00:00</updated><id>https://xuankentay.com/exercises/create-largest-number-from-a-list</id><content type="html" xml:base="https://xuankentay.com/exercises/create-largest-number-from-a-list/"><![CDATA[<p>Given a list of integers <code class="language-plaintext highlighter-rouge">nums</code>, rearrange its order to form the largest possible integer and return it as a string.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n ≤ 1,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">nums</code></li>
+  <li><code class="language-plaintext highlighter-rouge">nums[i] ≤ 1,000</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Create-Largest-Number-From-a-List" target="\_blank">https://binarysearch.com/problems/Create-Largest-Number-From-a-List</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[10, 7, 76, 415]</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">77641510</code></li>
+</ul>
+
+<h3 id="example-2">Example 2</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[961, 745, 331, 794, 923]</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">961923794745331</code></li>
+</ul>
+
+<h3 id="example-3">Example 3</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[45, 14, 70, 67, 95]</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">9570674514</code></li>
+</ul>
+
+<h3 id="example-4">Example 4</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[70, 5, 94, 18, 78]</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">947870518</code></li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Create-Largest-Number-From-a-List.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><summary type="html"><![CDATA[Given a list of integers nums, rearrange its order to form the largest possible integer and return it as a string.]]></summary></entry><entry><title type="html">Remove Duplicate Numbers</title><link href="https://xuankentay.com/exercises/remove-duplicate-numbers/" rel="alternate" type="text/html" title="Remove Duplicate Numbers" /><published>2022-10-01T00:00:00+00:00</published><updated>2022-10-01T00:00:00+00:00</updated><id>https://xuankentay.com/exercises/remove-duplicate-numbers</id><content type="html" xml:base="https://xuankentay.com/exercises/remove-duplicate-numbers/"><![CDATA[<p>Given a list of integers <code class="language-plaintext highlighter-rouge">nums</code>, remove numbers that appear multiple times in the list, while maintaining order of the appearance in the original list.</p>
+
+<p>It should use \(\mathcal{O}(k)\) space where <code class="language-plaintext highlighter-rouge">k</code> is the number of unique integers.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">nums</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Remove-Duplicate-Numbers" target="\_blank">https://binarysearch.com/problems/Remove-Duplicate-Numbers</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[1, 3, 5, 0, 3, 5, 8]</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">[1, 0, 8]</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>Only [1, 0, 8] are unique in the list and that’s the order they appear in.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Remove-Duplicate-Numbers.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="two pointers" /><category term="array" /><category term="hash table" /><summary type="html"><![CDATA[Given a list of integers nums, remove numbers that appear multiple times in the list, while maintaining order of the appearance in the original list.]]></summary></entry><entry><title type="html">Longest Increasing Path</title><link href="https://xuankentay.com/exercises/longest-increasing-path/" rel="alternate" type="text/html" title="Longest Increasing Path" /><published>2022-09-29T00:00:00+00:00</published><updated>2022-09-29T00:00:00+00:00</updated><id>https://xuankentay.com/exercises/longest-increasing-path</id><content type="html" xml:base="https://xuankentay.com/exercises/longest-increasing-path/"><![CDATA[<p>Given a two-dimensional integer <code class="language-plaintext highlighter-rouge">matrix</code>, find the length of the longest strictly increasing path. You can move up, down, left, or right.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n, m ≤ 500</code> where <code class="language-plaintext highlighter-rouge">n</code> and <code class="language-plaintext highlighter-rouge">m</code> are the number of rows and columns in <code class="language-plaintext highlighter-rouge">matrix</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Longest-Increasing-Path" target="\_blank">https://binarysearch.com/problems/Longest-Increasing-Path</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>matrix =</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[1,3,5],
+ [0,4,6],
+ [2,2,9]]
+</code></pre></div></div>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">6</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>The longest path is <code class="language-plaintext highlighter-rouge">[0, 1, 3, 5, 6, 9]</code></p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Longest-Increasing-Path.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="dynamic programming" /><summary type="html"><![CDATA[Given a two-dimensional integer matrix, find the length of the longest strictly increasing path. You can move up, down, left, or right.]]></summary></entry><entry><title type="html">Longest Sublist with K Distinct Numbers</title><link href="https://xuankentay.com/exercises/longest-sublist-with-k-distinct-numbers/" rel="alternate" type="text/html" title="Longest Sublist with K Distinct Numbers" /><published>2022-09-28T00:00:00+00:00</published><updated>2022-09-28T00:00:00+00:00</updated><id>https://xuankentay.com/exercises/longest-sublist-with-k-distinct-numbers</id><content type="html" xml:base="https://xuankentay.com/exercises/longest-sublist-with-k-distinct-numbers/"><![CDATA[<p>Given an integer <code class="language-plaintext highlighter-rouge">k</code> and a list of integers <code class="language-plaintext highlighter-rouge">nums</code>, return the length of the longest sublist that contains at most <code class="language-plaintext highlighter-rouge">k</code> distinct integers.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">0 ≤ k ≤ n ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">nums</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Longest-Sublist-with-K-Distinct-Numbers" target="\_blank">https://binarysearch.com/problems/Longest-Sublist-with-K-Distinct-Numbers</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>k = <code class="language-plaintext highlighter-rouge">1</code></li>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[0, 0, 0, 0, 0]</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">5</code></li>
+</ul>
+
+<h3 id="example-2">Example 2</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>k = <code class="language-plaintext highlighter-rouge">2</code></li>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[0, 1, 2, 1, 0]</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">3</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>The longest substring with <code class="language-plaintext highlighter-rouge">2</code> distinct integers is <code class="language-plaintext highlighter-rouge">[1,2,1]</code>, which has length of <code class="language-plaintext highlighter-rouge">3</code>.</p>
+
+<h3 id="example-3">Example 3</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>k = <code class="language-plaintext highlighter-rouge">1</code></li>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[0, 1, 2, 3, 4]</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">1</code></li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Longest-Sublist-with-K-Distinct-Numbers.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="array" /><summary type="html"><![CDATA[Given an integer k and a list of integers nums, return the length of the longest sublist that contains at most k distinct integers.]]></summary></entry></feed>

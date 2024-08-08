@@ -99,6 +99,16 @@ no_breadcrumbs: true
             <li class="cs-item">
                 <img class="cs-quote" aria-hidden="true" src="/assets/images/quote-red.svg" decoding="async" alt="quote icon" width="40" height="33">
                 <p class="cs-review">
+                    Xuanken has been an amazing engineer and a star problem solver in our team. He is a quick learner, is persistent and brings a structured and methodical approach to his work. He has helped uplift standardisation of our cloud and app configuration through automation, and has a keen eye for designing efficient and practical solutions. He has been and will be an asset to any team.
+                </p>
+                <a href="https://www.linkedin.com/in/jeramv" style="text-decoration: none;">
+                    <span class="cs-name">Jeram Venkatraaman</span>
+                    <span class="cs-job">Data Platforms | CRM | Integration | Consumer Data Right (Open Banking) | Architecture | Technology Strategy & Blueprint definition | Program Portfolio Mgmt</span>
+                </a>
+            </li>
+            <li class="cs-item">
+                <img class="cs-quote" aria-hidden="true" src="/assets/images/quote-red.svg" decoding="async" alt="quote icon" width="40" height="33">
+                <p class="cs-review">
                     I’ve worked with Xuanken for just over two years. Throughout our time working together, he has consistently demonstrated exceptional intelligence and insight. His ability to grasp complex concepts quickly and apply them effectively to solve problems has been invaluable to our team. He is not only quick to understand new ideas but is also adept at identifying innovative solutions to improve productivity and efficiency.
                     <p>[expand]</p>
                     <p>

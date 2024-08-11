@@ -1,0 +1,1123 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>CKAD: Certified Kubernetes Application Developer - Xuanken’s Space</title>
+<meta name="description" content="How to prepare for the 2-hour, online, proctored, performance-based CKAD exam.">
+
+
+  <meta name="author" content="Xuanken Tay">
+  
+  <meta property="article:author" content="Xuanken Tay">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Xuanken's Space">
+<meta property="og:title" content="CKAD: Certified Kubernetes Application Developer">
+<meta property="og:url" content="https://xuankentay.com/blog/ckad/">
+
+
+  <meta property="og:description" content="How to prepare for the 2-hour, online, proctored, performance-based CKAD exam.">
+
+
+
+  <meta property="og:image" content="https://xuankentay.com/assets/images/ckad-cert.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-02-08T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://xuankentay.com/blog/ckad/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Xuanken Tay",
+      "url": "https://xuankentay.com/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="EZ55zmHr7DuLBGsjr_AWErL_oi8V-N_2td1CiRtAKtE" />
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Xuanken's Space Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+<!-- for mathjax support -->
+
+    <!-- start custom head snippets -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:500|Livvic:500:700|Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet">
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo.png" alt="Xuanken's Space"></a>
+        
+        <a class="site-title" href="/">
+          Xuanken's Space
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/blog/">Blog</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/exercises/">Coding Exercises</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/projects/">Projects</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/images/ckad-cert.png');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          CKAD: Certified Kubernetes Application Developer
+
+        
+      </h1>
+      
+        <p class="page__lead">How to prepare for the 2-hour, online, proctored, performance-based CKAD exam.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-08T00:00:00+00:00">February 8, 2022</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+      
+      
+        <p>
+        
+          <a href="https://www.credly.com/badges/598bdb78-e22c-49be-90a6-4267e907dcf8/public_url" class="btn btn--light-outline btn--large">View My Certificate</a>
+        
+      
+    </p>
+</div>
+  
+  
+</div>
+
+
+
+
+  
+    
+
+<!--  -->
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1">
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/blog" itemprop="item"><span itemprop="name">Blog</span></a>
+          <meta itemprop="position" content="2">
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">CKAD: Certified Kubernetes Application Developer</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://xuankentay.com/">
+        <img src="/assets/images/profile-pic.jpeg" alt="Xuanken Tay" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://xuankentay.com/" itemprop="url">Xuanken Tay</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Software engineer who likes statistics, machine learning, DevOps and the cloud</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Sydney, AU</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/yaeba" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/xuanken-t-485a8b171" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:xuankentay@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="xuankentay@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="CKAD: Certified Kubernetes Application Developer">
+    <meta itemprop="description" content="How to prepare for the 2-hour, online, proctored, performance-based CKAD exam.">
+    <meta itemprop="datePublished" content="2022-02-08T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <h2 id="important-links">Important links</h2>
+
+<p>From official source,</p>
+
+<ul>
+  <li>Curriculum - <a href="https://github.com/cncf/curriculum" target="\_blank">https://github.com/cncf/curriculum</a>
+</li>
+  <li>Candidate handbook - <a href="https://docs.linuxfoundation.org/tc-docs/certification/lf-candidate-handbook" target="\_blank">https://docs.linuxfoundation.org/tc-docs/certification/lf-candidate-handbook</a>
+</li>
+  <li>Exam tips - <a href="https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad" target="\_blank">https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad</a>
+</li>
+</ul>
+
+<h2 id="study-materials">Study materials</h2>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/dgkanatsios/CKAD-exercises" target="\_blank">https://github.com/dgkanatsios/CKAD-exercises</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/zealvora/certified-kubernetes-application-developer" target="\_blank">https://github.com/zealvora/certified-kubernetes-application-developer</a></p>
+  </li>
+  <li>
+    <p><a href="https://medium.com/bb-tutorials-and-thoughts/practice-enough-with-these-questions-for-the-ckad-exam-2f42d1228552" target="\_blank">https://medium.com/bb-tutorials-and-thoughts/practice-enough-with-these-questions-for-the-ckad-exam-2f42d1228552</a></p>
+  </li>
+</ul>
+
+<p>If you need extra materials, check out this awesome course taught by Mumshad. It is very popular and consists of many practice labs and mock exams.</p>
+
+<ul>
+  <li><a href="https://www.udemy.com/course/certified-kubernetes-application-developer/" target="\_blank">Kubernetes Certified Application Developer (CKAD) with Tests</a></li>
+</ul>
+
+<h2 id="key-points">Key points</h2>
+
+<h3 id="1-understand-and-practise-enough-with-the-following-kubernetes-resources">1. Understand and practise enough with the following Kubernetes resources</h3>
+
+<ol>
+  <li>
+<strong>Pods</strong> (Kubernetes Documentation &gt; Concepts &gt; Workloads &gt; Pods)
+    <ul>
+      <li>this includes concepts like mounting volumes, readiness/liveness probes, security context, resources limits &amp; requests etc.</li>
+    </ul>
+  </li>
+  <li>
+<strong>ReplicaSets</strong> (Kubernetes Documentation &gt; Concepts &gt; Workloads &gt; Workload Resources &gt; ReplicaSet)</li>
+  <li>
+<strong>Deployments</strong> (Kubernetes Documentation &gt; Concepts &gt; Workloads &gt; Workload Resources &gt; Deployments)</li>
+  <li>
+<strong>Services</strong> (Kubernetes Documentation &gt; Concepts &gt; Services, Load Balancing, and Networking &gt; Service)</li>
+  <li>
+<strong>ConfigMaps</strong> (Kubernetes Documentation &gt; Tasks &gt; Configure Pods and Containers &gt; Configure a Pod to Use a ConfigMap)</li>
+  <li>
+<strong>Secrets</strong> (Kubernetes Documentation &gt; Concepts &gt; Configuration &gt; Secrets)</li>
+  <li>
+<strong>StorageClass</strong>, <strong>PersistentVolume</strong> and <strong>PersistentVolumeClaim</strong> (Kubernetes Documentation &gt; Concepts &gt; Storage &gt; Persistent Volumes)</li>
+  <li>
+<strong>Jobs</strong> (Kubernetes Documentation &gt; Concepts &gt; Workloads &gt; Workload Resources &gt; Jobs)</li>
+  <li>
+<strong>CronJobs</strong> (Kubernetes Documentation &gt; Concepts &gt; Workloads &gt; Workload Resources &gt; CronJob)</li>
+  <li>
+<strong>Ingress</strong> (Kubernetes Documentation &gt; Concepts &gt; Services, Load Balancing, and Networking &gt; Ingress)</li>
+  <li>
+<strong>NetworkPolicies</strong> (Kubernetes Documentation &gt; Concepts &gt; Services, Load Balancing, and Networking &gt; Network Policies)</li>
+  <li><strong>ServiceAccounts</strong></li>
+  <li><strong>Namespace</strong></li>
+</ol>
+
+<h3 id="2-know-your-podtemplate">2. Know your PodTemplate</h3>
+
+<p>I find it extremely helpful to be familiar with the Pod’s manifests (fields like <em>env</em>, <em>securityContext</em>, <em>readiness/liveness probe</em>, <em>volumes</em> etc).</p>
+
+<p>If you are very comfortable with PodTemplate you will have no problem with higher-level objects like ReplicaSets, Deployments, Jobs and others.</p>
+
+<p>For example you should know how to write a Pod manifest with the following fields from scratch</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">__</span>
+  <span class="na">labels</span><span class="pi">:</span> <span class="s">__</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">volumes</span><span class="pi">:</span> <span class="s">__</span>
+  <span class="na">securityContext</span><span class="pi">:</span> <span class="s">__</span>
+  <span class="na">containers</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">__</span>
+      <span class="na">image</span><span class="pi">:</span> <span class="s">__</span>
+      <span class="na">securityContext</span><span class="pi">:</span> <span class="s">__</span>
+      <span class="na">readinessProbe</span><span class="pi">:</span> <span class="s">__</span>
+      <span class="na">livenessProbe</span><span class="pi">:</span> <span class="s">__</span>
+      <span class="na">volumeMounts</span><span class="pi">:</span> <span class="s">__</span>
+      <span class="na">env</span><span class="pi">:</span> <span class="s">__</span>
+      <span class="na">envFrom</span><span class="pi">:</span> <span class="s">__</span>
+      <span class="na">resources</span><span class="pi">:</span> <span class="s">__</span>
+  <span class="na">initContainers</span><span class="pi">:</span> <span class="s">__</span>
+  <span class="na">nodeSelector</span><span class="pi">:</span> <span class="s">__</span>
+  <span class="na">affinity</span><span class="pi">:</span> <span class="s">__</span>
+</code></pre></div></div>
+
+<h3 id="3-learn-less-vim-and-optionally-tmux">3. Learn ‘less’, ‘vim’ and optionally ‘tmux’</h3>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">less</code> allows you to inspect any content quicker. At the minimum try to learn the following
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">g</code> to return to top</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">G</code> to go to bottom</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">/{insert-text-here}</code> + Enter to search for text
+        <ul>
+          <li>
+<code class="language-plaintext highlighter-rouge">n</code> to go to next match</li>
+          <li>
+<code class="language-plaintext highlighter-rouge">N</code> to go back previous match</li>
+        </ul>
+      </li>
+      <li>
+<code class="language-plaintext highlighter-rouge">j</code> and <code class="language-plaintext highlighter-rouge">k</code> for previous and next line</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">q</code> to quit less</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">vim</code> to edit files</li>
+  <li>optionally <code class="language-plaintext highlighter-rouge">tmux</code>. For me I used it to open 2~3 panes in the exam, 1 for the main work and the rest for documentation and watching resources</li>
+</ul>
+
+<h3 id="4-learn-how-to-check-the-fields-of-resources-when-unsure">4. Learn how to check the fields of resources when unsure</h3>
+
+<p>You can list the fields for Kubernetes resources like so</p>
+
+<ul>
+  <li>For Pods: <code class="language-plaintext highlighter-rouge">k explain --recursive pod.spec | less</code>
+</li>
+  <li>For ReadinessProbe: <code class="language-plaintext highlighter-rouge">k explain --recursive pod.spec.container.readinessProbe | less</code>
+</li>
+</ul>
+
+<h3 id="5-learn-that-you-can-create-the-base-yaml-file-for-most-resources-imperatively">5. Learn that you can create the <em>base</em> yaml file for most resources imperatively</h3>
+
+<p>The above is true for all resources mentioned in <a href="#1-understand-and-practise-enough-with-the-following-kubernetes-resources">#1</a> except</p>
+
+<ul>
+  <li>ReplicaSet</li>
+  <li>StorageClass</li>
+  <li>PersistentVolume</li>
+  <li>PersistentVolumeClaim</li>
+  <li>NetworkPolicy</li>
+</ul>
+
+<p>This is handy because it saves us time from crafting from scratch or copy pasting from documentation. Instead we could create a <strong>base</strong> yaml by running command and then edit it afterwards</p>
+
+<p>For example, if <code class="language-plaintext highlighter-rouge">ko</code> is an alias for <code class="language-plaintext highlighter-rouge">kubectl --dry-run=client -o yaml</code>,</p>
+
+<ul>
+  <li>Pod
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>ko run my-pod --restart=Never --image=nginx:latest -- /bin/sh 'echo hi' &gt; pod.yaml
+</code></pre></div>    </div>
+  </li>
+  <li>Deployment
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>ko create deploy my-deployment --replicas=10 --image=nginx:latest &gt; deployment.yaml
+</code></pre></div>    </div>
+  </li>
+  <li>Service
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>ko expose &lt;pod/deploy etc&gt; name --name my-service --type=ClusterIP --port=80 --target-port=8080 &gt; service.yaml
+</code></pre></div>    </div>
+  </li>
+  <li>ConfigMap
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>ko create cm my-configmap --from-literal=a=a --from-file=b=b --from-env-file=c &gt; my-configmap.yaml
+</code></pre></div>    </div>
+  </li>
+  <li>Secret
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>ko create secret generic my-secret --from-literal=a=a --from-file=b=b --from-env-file=c &gt; my-secret.yaml
+</code></pre></div>    </div>
+  </li>
+  <li>Job
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>ko create job my-job --image=busybox:latest -- /bin/sh 'echo hi' &gt; job.yaml
+</code></pre></div>    </div>
+  </li>
+  <li>CronJob
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>ko create cj my-cronjob --image=busybox:latest --schedule="* * * * *" -- /bin/sh 'echo hi' &gt; cronjob.yaml
+</code></pre></div>    </div>
+  </li>
+  <li>Ingress
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>ko create ingress my-ingress --rule="foo.com/bar=service-name:80" &gt; ingress.yaml
+</code></pre></div>    </div>
+  </li>
+  <li>ServiceAccount (normally requires nothing to be edited afterwards)
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>k create sa my-serviceaaccount
+</code></pre></div>    </div>
+  </li>
+  <li>Namespace (normally requires nothing to be edited afterwards)
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>k create ns my-namespace
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="bonus">Bonus</h2>
+
+<p>Here’s the <code class="language-plaintext highlighter-rouge">.bashrc</code>, <code class="language-plaintext highlighter-rouge">.vimrc</code> and <code class="language-plaintext highlighter-rouge">.tmux.conf</code> I used in the exam.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .bashrc (appended to end)</span>
+<span class="nb">source</span> &lt;<span class="o">(</span>kubectl completion bash<span class="o">)</span>
+<span class="nb">alias </span><span class="nv">k</span><span class="o">=</span>kubectl
+<span class="nb">alias </span><span class="nv">ko</span><span class="o">=</span><span class="s2">"kubectl --dry-run=client -o yaml"</span>
+<span class="nb">complete</span> <span class="nt">-F</span> __start_kubectl k ko
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .vimrc</span>
+<span class="nb">set </span><span class="nv">ts</span><span class="o">=</span>2 <span class="nv">sw</span><span class="o">=</span>2 et ai nu
+filetype off
+filetype plugin indent on
+syntax on
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .tmux.conf</span>
+<span class="nb">set</span> <span class="nt">-g</span> mouse on
+<span class="nb">set</span> <span class="nt">-g</span> default-terminal screen-256color
+</code></pre></div></div>
+
+<h2 id="tldr">TLDR?</h2>
+
+<p>Just take the exam and good luck. Everyone has two attempts anyway so why waste? <img class="emoji" title=":stuck_out_tongue_winking_eye:" alt=":stuck_out_tongue_winking_eye:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f61c.png" height="20" width="20"></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/kubernetes" class="page__taxonomy-item p-category" rel="tag">kubernetes</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/blog" class="page__taxonomy-item p-category" rel="tag">blog</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-02-08T00:00:00+00:00">February 8, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=CKAD%3A+Certified+Kubernetes+Application+Developer%20https%3A%2F%2Fxuankentay.com%2Fblog%2Fckad%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fxuankentay.com%2Fblog%2Fckad%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fxuankentay.com%2Fblog%2Fckad%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/kubernetes-pods/" class="pagination--pager" title="Kubernetes: Pods
+">Previous</a>
+    
+    
+      <a href="/exercises/central-linked-list/" class="pagination--pager" title="Central Linked List
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Leave a comment</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Read more</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/helm-2-to-3/" rel="permalink">Helm: Migrate Releases from Helm 2 to Helm 3
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-08-08T00:00:00+00:00">August 8, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">How to migrate Helm 2 releases to Helm 3
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/kubernetes-deployments/" rel="permalink">Kubernetes: Deployments
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-05-11T00:00:00+00:00">May 11, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Ensuring reliable and up-to-date application deployment
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/kubernetes-replicasets/" rel="permalink">Kubernetes: ReplicaSets
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-27T00:00:00+00:00">May 27, 2022</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Controller of a stable set of replica Pods running at any given time
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/cka/" rel="permalink">CKA: Certified Kubernetes Administrator
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-22T00:00:00+00:00">March 22, 2022</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">How to prepare for the 2-hour, online, proctored, performance-based CKA exam.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<div class="search-searchbar"></div>
+  <div class="search-hits"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/yaeba" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/xuanken-t-485a8b171" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2024 Xuanken Tay. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script>
+
+    var elements = document.querySelectorAll('p');
+    Array.prototype.forEach.call(elements, function(el, i){
+        if(el.innerHTML=='[expand]') {
+            var parentcontent = el.parentNode.innerHTML.replace('<p>[expand]</p>','<div class="expand" style="display: none; height: 0; overflow: hidden;">').replace('<p>[/expand]</p>','</div>');
+            el.parentNode.innerHTML = parentcontent;
+        }
+    });
+
+    var elements = document.querySelectorAll('div.expand');
+    Array.prototype.forEach.call(elements, function(el, i){
+        el.previousElementSibling.innerHTML = el.previousElementSibling.innerHTML + '<span>..&nbsp; <a style="cursor: pointer;" onclick="this.parentNode.parentNode.nextElementSibling.style.display = \'block\'; this.parentNode.parentNode.nextElementSibling.style.height = \'auto\'; this.parentNode.style.display = \'none\';">read&nbsp;more&nbsp;&rarr;</a></span>';
+    });
+
+</script>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '8D5OYT20I3',
+  apiKey: 'd89f133a4b03bfcfac479bd33641ba5c',
+  indexName: 'posts',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate,
+      empty: 'No results',
+    }
+  })
+);
+
+// Starting the search only when toggle is clicked
+$(document).ready(function () {
+  $(".search__toggle").on("click", function() {
+    if(!search.started) {
+      search.start();
+    }
+  });
+});
+</script>
+
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6HM48C4R70"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6HM48C4R70', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://xuankentay.com/blog/ckad/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/blog/ckad"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yaeba-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,986 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Helm: Migrate Releases from Helm 2 to Helm 3 - Xuanken’s Space</title>
+<meta name="description" content="How to migrate Helm 2 releases to Helm 3">
+
+
+  <meta name="author" content="Xuanken Tay">
+  
+  <meta property="article:author" content="Xuanken Tay">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Xuanken's Space">
+<meta property="og:title" content="Helm: Migrate Releases from Helm 2 to Helm 3">
+<meta property="og:url" content="https://xuankentay.com/blog/helm-2-to-3/">
+
+
+  <meta property="og:description" content="How to migrate Helm 2 releases to Helm 3">
+
+
+
+  <meta property="og:image" content="https://xuankentay.com/assets/images/kubernetes.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2024-08-08T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://xuankentay.com/blog/helm-2-to-3/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Xuanken Tay",
+      "url": "https://xuankentay.com/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="EZ55zmHr7DuLBGsjr_AWErL_oi8V-N_2td1CiRtAKtE" />
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Xuanken's Space Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+<!-- for mathjax support -->
+
+    <!-- start custom head snippets -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:500|Livvic:500:700|Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet">
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo.png" alt="Xuanken's Space"></a>
+        
+        <a class="site-title" href="/">
+          Xuanken's Space
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/blog/">Blog</a>
+            </li><li class="masthead__menu-item">
+              <a href="/exercises/">Coding Exercises</a>
+            </li><li class="masthead__menu-item">
+              <a href="/projects/">Projects</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/kubernetes.png');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Helm: Migrate Releases from Helm 2 to Helm 3
+
+        
+      </h1>
+      
+        <p class="page__lead">How to migrate Helm 2 releases to Helm 3
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-08-08T00:00:00+00:00">August 8, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+      
+      
+    </div>
+  
+  
+    <span class="page__hero-caption">Photo credit: <a href="https://wallpaperaccess.com/kubernetes"><strong>WallpaperAccess</strong></a>
+</span>
+  
+</div>
+
+
+
+
+  
+    
+
+<!--  -->
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/blog" itemprop="item"><span itemprop="name">Blog</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Helm: Migrate Releases from Helm 2 to Helm 3</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://xuankentay.com/">
+        <img src="/assets/images/profile-pic.jpeg" alt="Xuanken Tay" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://xuankentay.com/" itemprop="url">Xuanken Tay</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Software engineer who likes statistics, machine learning, DevOps and the cloud</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Sydney, AU</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/yaeba" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/xuanken-t-485a8b171" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:xuankentay@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="xuankentay@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Helm: Migrate Releases from Helm 2 to Helm 3">
+    <meta itemprop="description" content="How to migrate Helm 2 releases to Helm 3">
+    <meta itemprop="datePublished" content="2024-08-08T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#useful-links">Useful links</a></li><li><a href="#concepts">Concepts</a></li><li><a href="#notes">Notes</a><ul><li><a href="#1-install-helm2-and-tiller">1. Install Helm2 and Tiller</a></li><li><a href="#2-install-helm-2to3-plugin">2. Install Helm 2to3 Plugin</a></li><li><a href="#3-start-tiller-locally">3. Start Tiller Locally</a></li><li><a href="#4-backup-helm-2-release">4. Backup Helm 2 Release</a></li><li><a href="#5-convert-to-helm-3-release">5. Convert to Helm 3 Release</a></li><li><a href="#6-verify">6. Verify</a></li><li><a href="#7-optional-cleanup-helm-2-data">7. (Optional) Cleanup Helm 2 Data</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="useful-links">Useful links</h2>
+
+<ul>
+  <li><a href="https://github.com/helm/helm-2to3" target="\_blank">https://github.com/helm/helm-2to3</a></li>
+  <li><a href="https://helm.sh/docs/topics/v2_v3_migration/" target="\_blank">https://helm.sh/docs/topics/v2_v3_migration/</a></li>
+  <li><a href="https://helm.sh/blog/migrate-from-helm-v2-to-helm-v3/" target="\_blank">https://helm.sh/blog/migrate-from-helm-v2-to-helm-v3/</a></li>
+</ul>
+
+<h2 id="concepts">Concepts</h2>
+
+<ul>
+  <li>Helm 2 and Helm 3 represent significant change in Kubernetes package management</li>
+  <li>Helm 2 which was deprecated in Nov 2020, used a server-side component called <strong>Tiller</strong> to manage deployments</li>
+  <li>Tiller was responsible for storing release information in ConfigMaps or Secrets within the Tiller namespace</li>
+  <li>Helm 3 <em>eliminates Tiller entirely</em>, adopting a <u>client-only</u> architecture where all management tasks are handled directly by the Helm binary</li>
+  <li>This change simplifies security and storage: Helm 3 now stores release data as Secrets in the deployment namespace rather than relying on Tiller’s namespace</li>
+  <li>Helm 2 to 3 migration involves updating configuration and release management to align with these changes.</li>
+</ul>
+
+<h2 id="notes">Notes</h2>
+
+<p>This was what I had to do to migrate Helm 2 releases.</p>
+
+<h3 id="1-install-helm2-and-tiller">1. Install Helm2 and Tiller</h3>
+
+<p>Download Helm v2.17.0 from official github https://github.com/helm/helm/releases/tag/v2.17.0
+Extract and move to bin</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">tar </span>zvxf helm-v2.17.0-darwin-amd64.tar.gz
+<span class="nv">$ </span><span class="nb">sudo mv </span>darwin-amd64/helm /usr/local/bin/helm2
+<span class="nv">$ </span><span class="nb">sudo mv </span>darwin-amd64/tiller /usr/local/bin/
+</code></pre></div></div>
+
+<h3 id="2-install-helm-2to3-plugin">2. Install Helm 2to3 Plugin</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>helm plugin <span class="nb">install </span>https://github.com/helm/helm-2to3.git
+<span class="nv">$ </span>helm 2to3 <span class="nt">--help</span>
+
+Migrate and Cleanup Helm v2 configuration and releases <span class="k">in</span><span class="nt">-place</span> to Helm v3
+
+Usage:
+  2to3 <span class="o">[</span><span class="nb">command</span><span class="o">]</span>
+
+Available Commands:
+  cleanup     cleanup Helm v2 configuration, release data and Tiller deployment
+  completion  Generate the autocompletion script <span class="k">for </span>the specified shell
+  convert     migrate Helm v2 release <span class="k">in</span><span class="nt">-place</span> to Helm v3
+  <span class="nb">help        </span>Help about any <span class="nb">command
+  </span>move        migrate Helm v2 configuration <span class="k">in</span><span class="nt">-place</span> to Helm v3
+
+Flags:
+  <span class="nt">-h</span>, <span class="nt">--help</span>   <span class="nb">help </span><span class="k">for </span>2to3
+
+Use <span class="s2">"2to3 [command] --help"</span> <span class="k">for </span>more information about a command.
+</code></pre></div></div>
+
+<h3 id="3-start-tiller-locally">3. Start Tiller Locally</h3>
+
+<p>In my case, Tiller has been removed from my cluster, I had to start Tiller locally</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>tiller
+
+Starting Tiller v2.16.1 <span class="o">(</span><span class="nv">tls</span><span class="o">=</span><span class="nb">false</span><span class="o">)</span>
+GRPC listening on :44134
+Probes listening on :44135
+Storage driver is ConfigMap
+Max <span class="nb">history </span>per release is 0
+</code></pre></div></div>
+
+<h3 id="4-backup-helm-2-release">4. Backup Helm 2 Release</h3>
+
+<p>Always backup!</p>
+
+<p>Replace $TILLER_PORT with local tiller port from previous step, in my case it was 44134</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>helm2 <span class="nt">--host</span> localhost:<span class="nv">$TILLER_PORT</span> get values <span class="nv">$RELEASE</span> <span class="o">&gt;</span> backup-values.yaml
+<span class="nv">$ </span>helm2 <span class="nt">--host</span> localhost:<span class="nv">$TILLER_PORT</span> get manifest <span class="nv">$RELEASE</span> <span class="o">&gt;</span> backup-manifest.yaml
+</code></pre></div></div>
+
+<h3 id="5-convert-to-helm-3-release">5. Convert to Helm 3 Release</h3>
+
+<p>I used <code class="language-plaintext highlighter-rouge">-s configmaps</code> because in my case Tiller stored the release data in ConfigMaps</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>helm 2to3 convert <span class="nv">$RELEASE</span> <span class="nt">--tiller-out-cluster</span> <span class="nt">-s</span> configmaps <span class="nt">--dry-run</span>
+<span class="nv">$ </span>helm 2to3 convert <span class="nv">$RELEASE</span> <span class="nt">--tiller-out-cluster</span> <span class="nt">-s</span> configmaps
+</code></pre></div></div>
+
+<h3 id="6-verify">6. Verify</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>helm list <span class="nt">-n</span> <span class="nv">$NAMESPACE</span>
+</code></pre></div></div>
+
+<h3 id="7-optional-cleanup-helm-2-data">7. (Optional) Cleanup Helm 2 Data</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>helm 2to3 cleanup <span class="nt">--name</span> <span class="nv">$RELEASE</span> <span class="nt">--release-cleanup</span> <span class="nt">--tiller-out-cluster</span> <span class="nt">-s</span> configmaps <span class="nt">--dry-run</span>
+<span class="nv">$ </span>helm 2to3 cleanup <span class="nt">--name</span> <span class="nv">$RELEASE</span> <span class="nt">--release-cleanup</span> <span class="nt">--tiller-out-cluster</span> <span class="nt">-s</span> configmaps
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/kubernetes" class="page__taxonomy-item p-category" rel="tag">kubernetes</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/blog" class="page__taxonomy-item p-category" rel="tag">blog</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-08-08T00:00:00+00:00">August 8, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Helm%3A+Migrate+Releases+from+Helm+2+to+Helm+3%20https%3A%2F%2Fxuankentay.com%2Fblog%2Fhelm-2-to-3%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fxuankentay.com%2Fblog%2Fhelm-2-to-3%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fxuankentay.com%2Fblog%2Fhelm-2-to-3%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/kubernetes-deployments/" class="pagination--pager" title="Kubernetes: Deployments
+">Previous</a>
+    
+    
+      <a href="/blog/vault-associate-002/" class="pagination--pager" title="Hashicorp Certified: Vault Associate 002
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Leave a comment</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Read more</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/kubernetes-deployments/" rel="permalink">Kubernetes: Deployments
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-05-11T00:00:00+00:00">May 11, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Ensuring reliable and up-to-date application deployment
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/kubernetes-replicasets/" rel="permalink">Kubernetes: ReplicaSets
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-27T00:00:00+00:00">May 27, 2022</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Controller of a stable set of replica Pods running at any given time
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/cka/" rel="permalink">CKA: Certified Kubernetes Administrator
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-22T00:00:00+00:00">March 22, 2022</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">How to prepare for the 2-hour, online, proctored, performance-based CKA exam.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/ckad/" rel="permalink">CKAD: Certified Kubernetes Application Developer
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-08T00:00:00+00:00">February 8, 2022</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">How to prepare for the 2-hour, online, proctored, performance-based CKAD exam.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+  <div class="search-hits"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/yaeba" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/xuanken-t-485a8b171" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Xuanken Tay. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script>
+
+    var elements = document.querySelectorAll('p');
+    Array.prototype.forEach.call(elements, function(el, i){
+        if(el.innerHTML=='[expand]') {
+            var parentcontent = el.parentNode.innerHTML.replace('<p>[expand]</p>','<div class="expand" style="display: none; height: 0; overflow: hidden;">').replace('<p>[/expand]</p>','</div>');
+            el.parentNode.innerHTML = parentcontent;
+        }
+    });
+
+    var elements = document.querySelectorAll('div.expand');
+    Array.prototype.forEach.call(elements, function(el, i){
+        el.previousElementSibling.innerHTML = el.previousElementSibling.innerHTML + '<span>..&nbsp; <a style="cursor: pointer;" onclick="this.parentNode.parentNode.nextElementSibling.style.display = \'block\'; this.parentNode.parentNode.nextElementSibling.style.height = \'auto\'; this.parentNode.style.display = \'none\';">read&nbsp;more&nbsp;&rarr;</a></span>';
+    });
+
+</script>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '8D5OYT20I3',
+  apiKey: 'd89f133a4b03bfcfac479bd33641ba5c',
+  indexName: 'posts',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate,
+      empty: 'No results',
+    }
+  })
+);
+
+// Starting the search only when toggle is clicked
+$(document).ready(function () {
+  $(".search__toggle").on("click", function() {
+    if(!search.started) {
+      search.start();
+    }
+  });
+});
+</script>
+
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6HM48C4R70"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6HM48C4R70', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://xuankentay.com/blog/helm-2-to-3/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/blog/helm-2-to-3"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yaeba-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

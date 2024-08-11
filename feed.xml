@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://xuankentay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://xuankentay.com/" rel="alternate" type="text/html" /><updated>2024-08-11T14:06:53+00:00</updated><id>https://xuankentay.com/feed.xml</id><title type="html">Xuanken’s Space</title><subtitle>My personal blog. I write about software development, coding exercises, cool tips and tricks and notes for learning &amp; development purposes.</subtitle><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><entry><title type="html">Hashicorp Certified: Vault Associate 002</title><link href="https://xuankentay.com/blog/vault-associate-002/" rel="alternate" type="text/html" title="Hashicorp Certified: Vault Associate 002" /><published>2024-08-11T00:00:00+00:00</published><updated>2024-08-11T00:00:00+00:00</updated><id>https://xuankentay.com/blog/vault-associate-002</id><content type="html" xml:base="https://xuankentay.com/blog/vault-associate-002/"><![CDATA[<h2 id="important-links">Important links</h2>
+
+<p>From official source,</p>
+
+<ul>
+  <li>Exam details - <a href="https://developer.hashicorp.com/certifications/security-automation#vault-associate-(002)-details" target="\_blank">https://developer.hashicorp.com/certifications/security-automation#vault-associate-(002)-details</a></li>
+</ul>
+
+<h2 id="study-materials">Study materials</h2>
+
+<ul>
+  <li>Learning path - <a href="https://developer.hashicorp.com/vault/tutorials/associate-cert/associate-study" target="\_blank">https://developer.hashicorp.com/vault/tutorials/associate-cert/associate-study</a></li>
+  <li>Exam content list - <a href="https://developer.hashicorp.com/vault/tutorials/associate-cert/associate-review" target="\_blank">https://developer.hashicorp.com/vault/tutorials/associate-cert/associate-review</a></li>
+  <li>Sample questions - <a href="https://developer.hashicorp.com/vault/tutorials/associate-cert/associate-questions" target="\_blank">https://developer.hashicorp.com/vault/tutorials/associate-cert/associate-questions</a></li>
+</ul>
+
+<h2 id="key-points">Key points</h2>
+
+<h3 id="1-authentication-methods">1. Authentication Methods</h3>
+
+<p>Vault offers various ways to authenticate users and systems. Make sure you know the different authentication methods available, such as token-based, LDAP, and OAuth. Know how each method works, and understand when to use human versus system authentication. You should know when to choose the right method for different scenarios.</p>
+
+<h3 id="2-vault-policies">2. Vault Policies</h3>
+
+<p>Vault policies control who can access what within Vault. Revise how to create and manage these policies. Get comfortable with policy syntax, including paths and capabilities, so you can craft policies that meet specific requirements. Knowing how to manage these policies is very important for securing Vault environment.</p>
+
+<h3 id="3-vault-tokens">3. Vault Tokens</h3>
+
+<p>Tokens are a core part of Vault’s security model. Learn about the different types of tokens eg service, batch, root along with their uses and lifecycles. Understand how to create and manage these tokens effectively. Also, make sure you understand the concept of token accessors and the significance of time-to-live (TTL) for tokens.</p>
+
+<h3 id="4-vault-leases">4. Vault Leases</h3>
+
+<p>Vault uses leases to manage the lifetime of secrets. Understand what a lease ID is, and how to renew or revoke leases. This knowledge is important in order for one to ensure that secrets are managed securely and are valid only for as long as needed.</p>
+
+<h3 id="5-secrets-engines">5. Secrets Engines</h3>
+
+<p>Secrets engines are Vault components that store and manage secrets. Get familiar with different types of secrets engines and their use cases. Learn the difference between dynamic and static secrets, and understand the purpose of the transit secrets engine for encryption.</p>
+
+<h3 id="6-vault-cli-and-ui">6. Vault CLI and UI</h3>
+
+<p>Vault provides both a command-line interface (CLI) and a user interface (UI) for managing Vault environment. Learn how to authenticate, configure policies, access secrets, and enable secret engines using both CLI and UI.</p>
+
+<h3 id="7-vault-api">7. Vault API</h3>
+
+<p>The Vault API allows us to interact with Vault programmatically. Learn how to authenticate and access secrets using tools like <code class="language-plaintext highlighter-rouge">curl</code>, which is a common tool for interacting with APIs.</p>
+
+<h3 id="8-vault-architecture">8. Vault Architecture</h3>
+
+<p>Vault’s architecture includes several important components. Learn about data encryption, cluster strategies, storage backends, and the Vault agent. Also, understand concepts like secrets caching, Shamir secret sharing, and replication.</p>
+
+<h3 id="9-encryption-as-a-service">9. Encryption as a Service</h3>
+
+<p>Learn how to configure the transit secret engine, what’s the benefit of using it, how to perform encryption and decryption, and rotate encryption keys.</p>
+
+<h2 id="useful-links-for-reference">Useful Links for Reference</h2>
+
+<p>These are some documents I reviewed when preparing</p>
+
+<ul>
+  <li><a href="https://developer.hashicorp.com/vault/docs/agent-and-proxy/autoauth">Vault Agent Auto-Auth</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/docs/agent-and-proxy/agent/caching#caching-and-renewals">Vault Agent Caching</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/docs/auth/approle">Vault AppRole Auth Method</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/docs/concepts/seal#auto-unseal">Vault Auto-Unseal</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/tutorials/enterprise/disaster-recovery">Vault Disaster Recovery</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/docs/concepts/dynamic-secrets">Vault Dynamic Secrets</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/api-docs#authentication">Vault HTTP API Authentication</a></li>
+  <li><a href="https://registry.terraform.io/providers/hashicorp/vault/latest/docs/resources/identity_group">Vault Identity Group</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/docs/internals/rotation#key-rotation">Vault Key Rotation</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/docs/commands/kv#examples">Vault KV Secrets Engine</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/docs/auth/ldap">Vault LDAP Authentication</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/docs/concepts/lease#lease-durations-and-renewal">Vault Lease Renew Command</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/docs/concepts/lease">Vault Lease</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/tutorials/enterprise/performance-replication">Vault Performance Replication</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/docs/secrets/pki">Vault PKI Secrets Engine</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/docs/configuration/seal">Vault Seal Configuration</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/docs/configuration/storage">Vault Storage Configuration</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/docs/concepts/tokens">Vault Tokens</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/docs/auth/userpass">Vault Userpass Auth Method</a></li>
+  <li><a href="https://developer.hashicorp.com/vault/tutorials/encryption-as-a-service/eaas-transit">Transit Secrets Engine</a></li>
+</ul>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="blog" /><category term="vault" /><summary type="html"><![CDATA[How to prepare for the Vault Associate 002 exam.]]></summary></entry><entry><title type="html">Helm: Migrate Releases from Helm 2 to Helm 3</title><link href="https://xuankentay.com/blog/helm-2-to-3/" rel="alternate" type="text/html" title="Helm: Migrate Releases from Helm 2 to Helm 3" /><published>2024-08-08T00:00:00+00:00</published><updated>2024-08-08T00:00:00+00:00</updated><id>https://xuankentay.com/blog/helm-2-to-3</id><content type="html" xml:base="https://xuankentay.com/blog/helm-2-to-3/"><![CDATA[<h2 id="useful-links">Useful links</h2>
+
+<ul>
+  <li><a href="https://github.com/helm/helm-2to3" target="\_blank">https://github.com/helm/helm-2to3</a></li>
+  <li><a href="https://helm.sh/docs/topics/v2_v3_migration/" target="\_blank">https://helm.sh/docs/topics/v2_v3_migration/</a></li>
+  <li><a href="https://helm.sh/blog/migrate-from-helm-v2-to-helm-v3/" target="\_blank">https://helm.sh/blog/migrate-from-helm-v2-to-helm-v3/</a></li>
+</ul>
+
+<h2 id="concepts">Concepts</h2>
+
+<ul>
+  <li>Helm 2 and Helm 3 represent significant change in Kubernetes package management</li>
+  <li>Helm 2 which was deprecated in Nov 2020, used a server-side component called <strong>Tiller</strong> to manage deployments</li>
+  <li>Tiller was responsible for storing release information in ConfigMaps or Secrets within the Tiller namespace</li>
+  <li>Helm 3 <em>eliminates Tiller entirely</em>, adopting a <u>client-only</u> architecture where all management tasks are handled directly by the Helm binary</li>
+  <li>This change simplifies security and storage: Helm 3 now stores release data as Secrets in the deployment namespace rather than relying on Tiller’s namespace</li>
+  <li>Helm 2 to 3 migration involves updating configuration and release management to align with these changes.</li>
+</ul>
+
+<h2 id="notes">Notes</h2>
+
+<p>This was what I had to do to migrate Helm 2 releases.</p>
+
+<h3 id="1-install-helm2-and-tiller">1. Install Helm2 and Tiller</h3>
+
+<p>Download Helm v2.17.0 from official github https://github.com/helm/helm/releases/tag/v2.17.0
+Extract and move to bin</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">tar </span>zvxf helm-v2.17.0-darwin-amd64.tar.gz
+<span class="nv">$ </span><span class="nb">sudo mv </span>darwin-amd64/helm /usr/local/bin/helm2
+<span class="nv">$ </span><span class="nb">sudo mv </span>darwin-amd64/tiller /usr/local/bin/
+</code></pre></div></div>
+
+<h3 id="2-install-helm-2to3-plugin">2. Install Helm 2to3 Plugin</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>helm plugin <span class="nb">install </span>https://github.com/helm/helm-2to3.git
+<span class="nv">$ </span>helm 2to3 <span class="nt">--help</span>
+
+Migrate and Cleanup Helm v2 configuration and releases <span class="k">in</span><span class="nt">-place</span> to Helm v3
+
+Usage:
+  2to3 <span class="o">[</span><span class="nb">command</span><span class="o">]</span>
+
+Available Commands:
+  cleanup     cleanup Helm v2 configuration, release data and Tiller deployment
+  completion  Generate the autocompletion script <span class="k">for </span>the specified shell
+  convert     migrate Helm v2 release <span class="k">in</span><span class="nt">-place</span> to Helm v3
+  <span class="nb">help        </span>Help about any <span class="nb">command
+  </span>move        migrate Helm v2 configuration <span class="k">in</span><span class="nt">-place</span> to Helm v3
+
+Flags:
+  <span class="nt">-h</span>, <span class="nt">--help</span>   <span class="nb">help </span><span class="k">for </span>2to3
+
+Use <span class="s2">"2to3 [command] --help"</span> <span class="k">for </span>more information about a command.
+</code></pre></div></div>
+
+<h3 id="3-start-tiller-locally">3. Start Tiller Locally</h3>
+
+<p>In my case, Tiller has been removed from my cluster, I had to start Tiller locally</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>tiller
+
+Starting Tiller v2.16.1 <span class="o">(</span><span class="nv">tls</span><span class="o">=</span><span class="nb">false</span><span class="o">)</span>
+GRPC listening on :44134
+Probes listening on :44135
+Storage driver is ConfigMap
+Max <span class="nb">history </span>per release is 0
+</code></pre></div></div>
+
+<h3 id="4-backup-helm-2-release">4. Backup Helm 2 Release</h3>
+
+<p>Always backup!</p>
+
+<p>Replace $TILLER_PORT with local tiller port from previous step, in my case it was 44134</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>helm2 <span class="nt">--host</span> localhost:<span class="nv">$TILLER_PORT</span> get values <span class="nv">$RELEASE</span> <span class="o">&gt;</span> backup-values.yaml
+<span class="nv">$ </span>helm2 <span class="nt">--host</span> localhost:<span class="nv">$TILLER_PORT</span> get manifest <span class="nv">$RELEASE</span> <span class="o">&gt;</span> backup-manifest.yaml
+</code></pre></div></div>
+
+<h3 id="5-convert-to-helm-3-release">5. Convert to Helm 3 Release</h3>
+
+<p>I used <code class="language-plaintext highlighter-rouge">-s configmaps</code> because in my case Tiller stored the release data in ConfigMaps</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>helm 2to3 convert <span class="nv">$RELEASE</span> <span class="nt">--tiller-out-cluster</span> <span class="nt">-s</span> configmaps <span class="nt">--dry-run</span>
+<span class="nv">$ </span>helm 2to3 convert <span class="nv">$RELEASE</span> <span class="nt">--tiller-out-cluster</span> <span class="nt">-s</span> configmaps
+</code></pre></div></div>
+
+<h3 id="6-verify">6. Verify</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>helm list <span class="nt">-n</span> <span class="nv">$NAMESPACE</span>
+</code></pre></div></div>
+
+<h3 id="7-optional-cleanup-helm-2-data">7. (Optional) Cleanup Helm 2 Data</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>helm 2to3 cleanup <span class="nt">--name</span> <span class="nv">$RELEASE</span> <span class="nt">--release-cleanup</span> <span class="nt">--tiller-out-cluster</span> <span class="nt">-s</span> configmaps <span class="nt">--dry-run</span>
+<span class="nv">$ </span>helm 2to3 cleanup <span class="nt">--name</span> <span class="nv">$RELEASE</span> <span class="nt">--release-cleanup</span> <span class="nt">--tiller-out-cluster</span> <span class="nt">-s</span> configmaps
+</code></pre></div></div>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="blog" /><category term="kubernetes" /><summary type="html"><![CDATA[How to migrate Helm 2 releases to Helm 3]]></summary></entry><entry><title type="html">Kubernetes: Deployments</title><link href="https://xuankentay.com/blog/kubernetes-deployments/" rel="alternate" type="text/html" title="Kubernetes: Deployments" /><published>2024-05-11T00:00:00+00:00</published><updated>2024-05-11T00:00:00+00:00</updated><id>https://xuankentay.com/blog/kubernetes-deployments</id><content type="html" xml:base="https://xuankentay.com/blog/kubernetes-deployments/"><![CDATA[<h2 id="useful-links">Useful links</h2>
+
+<ul>
+  <li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/" target="\_blank">https://kubernetes.io/docs/concepts/workloads/controllers/​deployment/</a></li>
+  <li>Also check out my previous posts on:
+    <ul>
+      <li><a href="../kubernetes-pods/" target="\_blank">Kubernetes: Pods</a></li>
+      <li><a href="../kubernetes-replicasets/" target="\_blank">Kubernetes: ReplicaSets</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="concepts">Concepts</h2>
+
+<p><strong>Deployments</strong> manage the deployment and scaling of a set of Pods and provide declarative updates to applications.</p>
+
+<ul>
+  <li>A Deployment is described as <strong>a set of identical Pods</strong> with no unique identities. A Deployment runs multiple replicas of your application and automatically replaces any instances that fail or become unresponsive.</li>
+  <li>In essence, Deployments are <strong>higher-level concepts</strong> that manage ReplicaSets and provide additional features like <strong>rolling updates and rollbacks</strong>.</li>
+  <li>As such, it’s recommended to use Deployment instead of directly managing ReplicaSets because it provides additional useful features.</li>
+  <li>Deployments manage <strong>stateless</strong> applications, while StatefulSets manage <strong>stateful</strong> applications</li>
+</ul>
+
+<h2 id="notes">Notes</h2>
+
+<h3 id="declarative-manifest">Declarative manifest</h3>
+
+<ul>
+  <li>Simple example of Deployment yaml definition, you will find this very similar to ReplicaSet
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Deployment</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">nginx-deployment</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">strategy</span><span class="pi">:</span> <span class="c1"># how to replace old pods with new ones</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">RollingUpdate</span> <span class="c1"># default strategy</span>
+    <span class="na">rollingUpdate</span><span class="pi">:</span>
+      <span class="na">maxUnavailable</span><span class="pi">:</span> <span class="m">1</span>
+      <span class="na">maxSurge</span><span class="pi">:</span> <span class="m">1</span>
+  <span class="na">replicas</span><span class="pi">:</span> <span class="m">3</span> <span class="c1"># number of replica pods</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">matchLabels</span><span class="pi">:</span>
+      <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span> <span class="c1"># selector</span>
+  <span class="na">template</span><span class="pi">:</span> <span class="c1"># pod template (just like what we would define in pod yaml)</span>
+    <span class="na">metadata</span><span class="pi">:</span>
+      <span class="na">labels</span><span class="pi">:</span>
+        <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span> <span class="c1"># label of pod</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">containers</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">nginx</span>
+        <span class="na">image</span><span class="pi">:</span> <span class="s">nginx:1.14.2</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="imperative-commands">Imperative commands</h3>
+
+<ul>
+  <li>Get deployment details<br />
+<code class="language-plaintext highlighter-rouge">k get deploy &lt;deployment-name&gt; -o wide</code></li>
+  <li>Update Deployment replicas<br />
+<code class="language-plaintext highlighter-rouge">k scale deployment &lt;deployment-name&gt; --replicas=&lt;num&gt;</code></li>
+  <li>Rollback to an earlier Deployment revision<br />
+<code class="language-plaintext highlighter-rouge">k rollout undo deploy &lt;deployment-name&gt;</code></li>
+  <li>View the rollout history of a Deployment<br />
+<code class="language-plaintext highlighter-rouge">k rollout history deploy &lt;deployment-name&gt;</code></li>
+  <li>Determine Deployment (owner) of a pod<br />
+<code class="language-plaintext highlighter-rouge">k get pods &lt;pod-name&gt; -o yaml | grep -A 5 owner</code></li>
+  <li>Delete Deployment and all its pods<br />
+<code class="language-plaintext highlighter-rouge">k delete deploy &lt;deployment-name&gt;</code></li>
+  <li>Delete Deployment only<br />
+<code class="language-plaintext highlighter-rouge">k delete deploy &lt;deployment-name&gt; --cascade=orphan</code></li>
+</ul>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="blog" /><category term="kubernetes" /><summary type="html"><![CDATA[Ensuring reliable and up-to-date application deployment]]></summary></entry><entry><title type="html">Anagram Substrings</title><link href="https://xuankentay.com/exercises/anagram-substrings/" rel="alternate" type="text/html" title="Anagram Substrings" /><published>2022-10-13T00:00:00+00:00</published><updated>2022-10-13T00:00:00+00:00</updated><id>https://xuankentay.com/exercises/anagram-substrings</id><content type="html" xml:base="https://xuankentay.com/exercises/anagram-substrings/"><![CDATA[<p>Given two strings <code class="language-plaintext highlighter-rouge">s0</code> and <code class="language-plaintext highlighter-rouge">s1</code>, return the number of substrings where <code class="language-plaintext highlighter-rouge">s1</code> contains any anagram of <code class="language-plaintext highlighter-rouge">s0</code>.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">s0</code></li>
+  <li><code class="language-plaintext highlighter-rouge">m ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">m</code> is the length of <code class="language-plaintext highlighter-rouge">s1</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Anagram-Substrings" target="\_blank">https://binarysearch.com/problems/Anagram-Substrings</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>s0 = <code class="language-plaintext highlighter-rouge">abc</code></li>
+  <li>s1 = <code class="language-plaintext highlighter-rouge">bcabxabc</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">3</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>The substrings <code class="language-plaintext highlighter-rouge">"bca"</code>, <code class="language-plaintext highlighter-rouge">"cab"</code> and <code class="language-plaintext highlighter-rouge">"abc"</code> of <code class="language-plaintext highlighter-rouge">s0</code> are permutations of <code class="language-plaintext highlighter-rouge">"abc"</code>.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Anagram-Substrings.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="hash table" /><category term="string" /><summary type="html"><![CDATA[Given two strings s0 and s1, return the number of substrings where s1 contains any anagram of s0.]]></summary></entry><entry><title type="html">Separate People Given Dislike Relations</title><link href="https://xuankentay.com/exercises/separate-people-given-dislike-relations/" rel="alternate" type="text/html" title="Separate People Given Dislike Relations" /><published>2022-10-12T00:00:00+00:00</published><updated>2022-10-12T00:00:00+00:00</updated><id>https://xuankentay.com/exercises/separate-people-given-dislike-relations</id><content type="html" xml:base="https://xuankentay.com/exercises/separate-people-given-dislike-relations/"><![CDATA[<p>You are given an integer <code class="language-plaintext highlighter-rouge">n</code> and a two-dimensional list of integers <code class="language-plaintext highlighter-rouge">enemies</code>. Integer <code class="language-plaintext highlighter-rouge">n</code> means there’s <code class="language-plaintext highlighter-rouge">n</code> people labeled from <code class="language-plaintext highlighter-rouge">[0, n - 1]</code>. Each element in <code class="language-plaintext highlighter-rouge">enemies</code> contains <code class="language-plaintext highlighter-rouge">[person_a, person_b]</code> which means that <code class="language-plaintext highlighter-rouge">person_a</code> and <code class="language-plaintext highlighter-rouge">person_b</code> are enemies.</p>
+
+<p>Return whether it’s possible to partition the <code class="language-plaintext highlighter-rouge">n</code> people into two groups such that no two people that are enemies are in the same group.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n ≤ 1,000</code></li>
+  <li><code class="language-plaintext highlighter-rouge">m ≤ 10,000</code> where <code class="language-plaintext highlighter-rouge">m</code> is the length of <code class="language-plaintext highlighter-rouge">enemies</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Separate-People-Given-Dislike-Relations" target="\_blank">https://binarysearch.com/problems/Separate-People-Given-Dislike-Relations</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>n = <code class="language-plaintext highlighter-rouge">4</code></li>
+  <li>enemies =</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[0,1],
+ [1,2]]
+</code></pre></div></div>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">True</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>We can have these two groups <code class="language-plaintext highlighter-rouge">[0, 2, 3]</code> and <code class="language-plaintext highlighter-rouge">[1]</code>.</p>
+
+<h3 id="example-2">Example 2</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>n = <code class="language-plaintext highlighter-rouge">3</code></li>
+  <li>enemies =</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[0,1],
+ [0,2],
+ [1,2]]
+</code></pre></div></div>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">False</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>No matter how we split the two groups, there will be two people that are enemies in a group.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Separate-People-Given-Dislike-Relations.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="graph" /><summary type="html"><![CDATA[You are given an integer n and a two-dimensional list of integers enemies. Integer n means there’s n people labeled from [0, n - 1]. Each element in enemies contains [person_a, person_b] which means that person_a and person_b are enemies.]]></summary></entry><entry><title type="html">Fractional Knapsack</title><link href="https://xuankentay.com/exercises/fractional-knapsack/" rel="alternate" type="text/html" title="Fractional Knapsack" /><published>2022-10-10T00:00:00+00:00</published><updated>2022-10-10T00:00:00+00:00</updated><id>https://xuankentay.com/exercises/fractional-knapsack</id><content type="html" xml:base="https://xuankentay.com/exercises/fractional-knapsack/"><![CDATA[<p>You are given two lists of integers <code class="language-plaintext highlighter-rouge">weights</code> and <code class="language-plaintext highlighter-rouge">values</code> which have the same length and an integer <code class="language-plaintext highlighter-rouge">capacity</code>. <code class="language-plaintext highlighter-rouge">weights[i]</code> and <code class="language-plaintext highlighter-rouge">values[i]</code> represent the weight and value of the <code class="language-plaintext highlighter-rouge">i</code>th item.</p>
+
+<p>Given that you can take at most <code class="language-plaintext highlighter-rouge">capacity</code> weights, and that you can take a fraction of an item’s weight with proportionate value, return the maximum amount of value you can get, rounded down to the nearest integer.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">weights</code> and <code class="language-plaintext highlighter-rouge">values</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Fractional-Knapsack" target="\_blank">https://binarysearch.com/problems/Fractional-Knapsack</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>weights = <code class="language-plaintext highlighter-rouge">[5, 6, 2]</code></li>
+  <li>values = <code class="language-plaintext highlighter-rouge">[100, 100, 1]</code></li>
+  <li>capacity = <code class="language-plaintext highlighter-rouge">8</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">150</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>The best we can do is:</p>
+
+<ul>
+  <li>Take the item with <code class="language-plaintext highlighter-rouge">5</code> weight and take the <code class="language-plaintext highlighter-rouge">100</code> value, leaving us with <code class="language-plaintext highlighter-rouge">3</code> capacity</li>
+  <li>Take half of the item with <code class="language-plaintext highlighter-rouge">6</code> weight and take half of the <code class="language-plaintext highlighter-rouge">100</code> value.</li>
+</ul>
+
+<h3 id="example-2">Example 2</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>weights = <code class="language-plaintext highlighter-rouge">[5, 6, 2]</code></li>
+  <li>values = <code class="language-plaintext highlighter-rouge">[100, 100, 1]</code></li>
+  <li>capacity = <code class="language-plaintext highlighter-rouge">13</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">201</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>We can take all <code class="language-plaintext highlighter-rouge">3</code> items in full</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Fractional-Knapsack.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="greedy" /><summary type="html"><![CDATA[You are given two lists of integers weights and values which have the same length and an integer capacity. weights[i] and values[i] represent the weight and value of the ith item.]]></summary></entry><entry><title type="html">Longest Arithmetic Subsequence with Difference Constraint</title><link href="https://xuankentay.com/exercises/longest-arithmetic-subsequence-with-difference-constraint/" rel="alternate" type="text/html" title="Longest Arithmetic Subsequence with Difference Constraint" /><published>2022-10-08T00:00:00+00:00</published><updated>2022-10-08T00:00:00+00:00</updated><id>https://xuankentay.com/exercises/longest-arithmetic-subsequence-with-difference-constraint</id><content type="html" xml:base="https://xuankentay.com/exercises/longest-arithmetic-subsequence-with-difference-constraint/"><![CDATA[<p>Given a list of integers <code class="language-plaintext highlighter-rouge">nums</code> and an integer <code class="language-plaintext highlighter-rouge">diff</code>, return the length of the longest arithmetic subsequence where the difference between each consecutive numbers in the subsequence is <code class="language-plaintext highlighter-rouge">diff</code>.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">0 ≤ n ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">nums</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Longest-Arithmetic-Subsequence-with-Difference-Constraint" target="\_blank">https://binarysearch.com/problems/Longest-Arithmetic-Subsequence-with-Difference-Constraint</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[-2, 0, 3, 6, 1, 9]</code></li>
+  <li>diff = <code class="language-plaintext highlighter-rouge">3</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">4</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>We can pick the subsequence <code class="language-plaintext highlighter-rouge">[0, 3, 6, 9]</code>.</p>
+
+<h3 id="example-2">Example 2</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[9, 8, 7, 5, 3]</code></li>
+  <li>diff = <code class="language-plaintext highlighter-rouge">-2</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">4</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>We can pick the subsequence <code class="language-plaintext highlighter-rouge">[9, 7, 5, 3]</code>.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Longest-Arithmetic-Subsequence-with-Difference-Constraint.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="math" /><category term="dynamic programming" /><summary type="html"><![CDATA[Given a list of integers nums and an integer diff, return the length of the longest arithmetic subsequence where the difference between each consecutive numbers in the subsequence is diff.]]></summary></entry><entry><title type="html">Maximum Sum Rectangle with Condition</title><link href="https://xuankentay.com/exercises/maximum-sum-rectangle-with-condition/" rel="alternate" type="text/html" title="Maximum Sum Rectangle with Condition" /><published>2022-10-07T00:00:00+00:00</published><updated>2022-10-07T00:00:00+00:00</updated><id>https://xuankentay.com/exercises/maximum-sum-rectangle-with-condition</id><content type="html" xml:base="https://xuankentay.com/exercises/maximum-sum-rectangle-with-condition/"><![CDATA[<p>Given a two-dimensional integer matrix <code class="language-plaintext highlighter-rouge">matrix</code> and an integer <code class="language-plaintext highlighter-rouge">k</code>, return the largest sum of a rectangle <code class="language-plaintext highlighter-rouge">≤ k</code>.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n, m ≤ 100</code> where <code class="language-plaintext highlighter-rouge">n</code> and <code class="language-plaintext highlighter-rouge">m</code> are the number of rows and columns in <code class="language-plaintext highlighter-rouge">matrix</code>.</li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Maximum-Sum-Rectangle-with-Condition" target="\_blank">https://binarysearch.com/problems/Maximum-Sum-Rectangle-with-Condition</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>matrix =</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[ 2,-2],
+ [ 3, 2]]
+</code></pre></div></div>
+
+<ul>
+  <li>k = <code class="language-plaintext highlighter-rouge">6</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">5</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>We can take the rectangle <code class="language-plaintext highlighter-rouge">[2, 3]</code> to get sum of <code class="language-plaintext highlighter-rouge">5</code>.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Maximum-Sum-Rectangle-with-Condition.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="queue" /><category term="prefix sum" /><summary type="html"><![CDATA[Given a two-dimensional integer matrix matrix and an integer k, return the largest sum of a rectangle ≤ k.]]></summary></entry><entry><title type="html">Create Largest Number From a List</title><link href="https://xuankentay.com/exercises/create-largest-number-from-a-list/" rel="alternate" type="text/html" title="Create Largest Number From a List" /><published>2022-10-04T00:00:00+00:00</published><updated>2022-10-04T00:00:00+00:00</updated><id>https://xuankentay.com/exercises/create-largest-number-from-a-list</id><content type="html" xml:base="https://xuankentay.com/exercises/create-largest-number-from-a-list/"><![CDATA[<p>Given a list of integers <code class="language-plaintext highlighter-rouge">nums</code>, rearrange its order to form the largest possible integer and return it as a string.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n ≤ 1,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">nums</code></li>
+  <li><code class="language-plaintext highlighter-rouge">nums[i] ≤ 1,000</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Create-Largest-Number-From-a-List" target="\_blank">https://binarysearch.com/problems/Create-Largest-Number-From-a-List</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[10, 7, 76, 415]</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">77641510</code></li>
+</ul>
+
+<h3 id="example-2">Example 2</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[961, 745, 331, 794, 923]</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">961923794745331</code></li>
+</ul>
+
+<h3 id="example-3">Example 3</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[45, 14, 70, 67, 95]</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">9570674514</code></li>
+</ul>
+
+<h3 id="example-4">Example 4</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[70, 5, 94, 18, 78]</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">947870518</code></li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Create-Largest-Number-From-a-List.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><summary type="html"><![CDATA[Given a list of integers nums, rearrange its order to form the largest possible integer and return it as a string.]]></summary></entry><entry><title type="html">Remove Duplicate Numbers</title><link href="https://xuankentay.com/exercises/remove-duplicate-numbers/" rel="alternate" type="text/html" title="Remove Duplicate Numbers" /><published>2022-10-01T00:00:00+00:00</published><updated>2022-10-01T00:00:00+00:00</updated><id>https://xuankentay.com/exercises/remove-duplicate-numbers</id><content type="html" xml:base="https://xuankentay.com/exercises/remove-duplicate-numbers/"><![CDATA[<p>Given a list of integers <code class="language-plaintext highlighter-rouge">nums</code>, remove numbers that appear multiple times in the list, while maintaining order of the appearance in the original list.</p>
+
+<p>It should use \(\mathcal{O}(k)\) space where <code class="language-plaintext highlighter-rouge">k</code> is the number of unique integers.</p>
+
+<p><strong>Constraints</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n ≤ 100,000</code> where <code class="language-plaintext highlighter-rouge">n</code> is the length of <code class="language-plaintext highlighter-rouge">nums</code></li>
+</ul>
+
+<p><a href="https://binarysearch.com/problems/Remove-Duplicate-Numbers" target="\_blank">https://binarysearch.com/problems/Remove-Duplicate-Numbers</a></p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong></p>
+
+<ul>
+  <li>nums = <code class="language-plaintext highlighter-rouge">[1, 3, 5, 0, 3, 5, 8]</code></li>
+</ul>
+
+<p><strong>Output</strong></p>
+
+<ul>
+  <li>answer = <code class="language-plaintext highlighter-rouge">[1, 0, 8]</code></li>
+</ul>
+
+<p><strong>Explanation</strong></p>
+
+<p>Only [1, 0, 8] are unique in the list and that’s the order they appear in.</p>
+
+<h2 id="solution">Solution</h2>
+
+<script src="https://gist.github.com/yaeba/16da7be5123724fcf6eccc25581cef5a.js?file=Remove-Duplicate-Numbers.py"></script>]]></content><author><name>Xuanken Tay</name><email>xuankentay@gmail.com</email></author><category term="exercises" /><category term="two pointers" /><category term="array" /><category term="hash table" /><summary type="html"><![CDATA[Given a list of integers nums, remove numbers that appear multiple times in the list, while maintaining order of the appearance in the original list.]]></summary></entry></feed>
